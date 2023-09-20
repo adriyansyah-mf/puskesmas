@@ -183,7 +183,7 @@
                                                         aria-expanded="false">Lokmun Linprok Linsek</a>
                 
                                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                                        <li><a class="dropdown-item" href="index.html">Notulen</a></li>
+                                                        <li><a class="dropdown-item" href="lokmun/gizi">Notulen</a></li>
                                                     </ul>
                                                 </li>
                                                 <li class="dropdown dropdown-submenu dropright">

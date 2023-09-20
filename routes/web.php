@@ -10,6 +10,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EvaluasiController;
 use App\Http\Controllers\IndicatorController;
 use App\Http\Controllers\LaporanKinerjaController;
+use App\Http\Controllers\LokmunNotulenController;
 
 /*
 |--------------------------------------------------------------------------
@@ -85,3 +86,14 @@ Route::put('report/{prog}/{id}/{year}/{month}', [LaporanKinerjaController::class
 Route::get('report/{prog}/{year}/{month}', [LaporanKinerjaController::class, 'filter']);
 
 Route::delete('report/delete/{id}/{prog}', [LaporanKinerjaController::class, 'delete'])->name('report.delete');
+
+// lokmun
+Route::get('lokmun/{prog}', [LokmunNotulenController::class, 'index']);
+Route::post('/image-upload', [LokmunNotulenController::class, 'uploadImage'])->name('upload.image');
+
+
+// load image
+
+Route::get('public/uploads/lokmun/{name}', [LokmunNotulenController::class, 'getImage'])->name('get.image');
+
+// Route::post('upload/lokmun/{prog}', [LokmunNotulenController::class, 'uploadImage'])->name('upload.image');
