@@ -75,6 +75,8 @@ Route::post('/eval/{prog}/{year}/{month}', [EvaluasiController::class, 'add']);
 
 Route::put('/eval/{prog}/{id}', [EvaluasiController::class, 'update'])->name('eval.gizi.update');
 
+Route::delete('eval/delete/{id}/{prog}', [EvaluasiController::class, 'delete'])->name('eval.delete');
+
 // report
 
 Route::get('report/{prog}', [LaporanKinerjaController::class, 'index']);
