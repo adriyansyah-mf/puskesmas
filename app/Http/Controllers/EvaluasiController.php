@@ -121,5 +121,14 @@ class EvaluasiController extends Controller
         }
         return redirect("/eval/{$prog}")->withSuccess('Berhasil update data!');
     }
+
+    public function delete($id, $prog)
+    {
+        $data = Evaluasi::find($id);
+        
+        Evaluasi::destroy($id);
+
+        return redirect()->back()->withSuccess('Data berhasil dihapus');
+    }
 }
 
