@@ -12,6 +12,7 @@ use App\Http\Controllers\IndicatorController;
 use App\Http\Controllers\LaporanKinerjaController;
 use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\LokmunNotulenController;
+use App\Models\Jadwal;
 
 /*
 |--------------------------------------------------------------------------
@@ -90,11 +91,8 @@ Route::get('report/{prog}/{year}/{month}', [LaporanKinerjaController::class, 'fi
 
 Route::delete('report/delete/{id}/{prog}', [LaporanKinerjaController::class, 'delete'])->name('report.delete');
 
-// jadwal
-
-Route::get('jadwal/{prog}', [JadwalController::class, 'index']);
-
 // lokmun
+
 Route::get('lokmun/{prog}', [LokmunNotulenController::class, 'index']);
 
 Route::post('/image-upload', [LokmunNotulenController::class, 'uploadImage'])->name('upload.image');
@@ -105,3 +103,16 @@ Route::post('/image-upload', [LokmunNotulenController::class, 'uploadImage'])->n
 Route::get('public/uploads/lokmun/{name}', [LokmunNotulenController::class, 'getImage'])->name('get.image');
 
 // Route::post('upload/lokmun/{prog}', [LokmunNotulenController::class, 'uploadImage'])->name('upload.image');
+
+
+// jadwal
+
+Route::get('jadwal/{prog}', [JadwalController::class, 'index']);
+
+Route::get('jadwal/{prog}/{year}/{month}', [JadwalController::class, 'filter']);
+
+Route::post('jadwal/{prog}/{year}/{month}', [JadwalController::class, 'add']);
+
+Route::put('jadwal/{prog}//{year}/{month}', [JadwalController::class, 'update'])->name('jadwal.update');
+
+Route::delete('jadwal/delete/{prog}', [JadwalController::class, 'delete'])->name('jadwal.delete');
