@@ -11,6 +11,7 @@ use App\Http\Controllers\EvaluasiController;
 use App\Http\Controllers\IndicatorController;
 use App\Http\Controllers\LaporanKinerjaController;
 use App\Http\Controllers\JadwalController;
+use App\Http\Controllers\LokmunNotulenController;
 
 /*
 |--------------------------------------------------------------------------
@@ -92,3 +93,15 @@ Route::delete('report/delete/{id}/{prog}', [LaporanKinerjaController::class, 'de
 // jadwal
 
 Route::get('jadwal/{prog}', [JadwalController::class, 'index']);
+
+// lokmun
+Route::get('lokmun/{prog}', [LokmunNotulenController::class, 'index']);
+
+Route::post('/image-upload', [LokmunNotulenController::class, 'uploadImage'])->name('upload.image');
+
+
+// load image
+
+Route::get('public/uploads/lokmun/{name}', [LokmunNotulenController::class, 'getImage'])->name('get.image');
+
+// Route::post('upload/lokmun/{prog}', [LokmunNotulenController::class, 'uploadImage'])->name('upload.image');
