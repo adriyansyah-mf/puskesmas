@@ -10,6 +10,7 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EvaluasiController;
 use App\Http\Controllers\IndicatorController;
 use App\Http\Controllers\LaporanKinerjaController;
+use App\Http\Controllers\JadwalController;
 
 /*
 |--------------------------------------------------------------------------
@@ -87,3 +88,7 @@ Route::put('report/{prog}/{id}/{year}/{month}', [LaporanKinerjaController::class
 Route::get('report/{prog}/{year}/{month}', [LaporanKinerjaController::class, 'filter']);
 
 Route::delete('report/delete/{id}/{prog}', [LaporanKinerjaController::class, 'delete'])->name('report.delete');
+
+// jadwal
+
+Route::get('jadwal/{prog}', [JadwalController::class, 'index']);

@@ -163,7 +163,7 @@
                                                         aria-expanded="false">Jadwal</a>
                 
                                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                                        <li><a class="dropdown-item" href="index.html">Jadwal kegiatan ke desa</a></li>
+                                                        <li><a class="dropdown-item" href="\jadwal\gizi">Jadwal kegiatan ke desa</a></li>
                                                         <li><a class="dropdown-item" href="index.html">Perubahan jadwal </a></li>
                                                     </ul>
                                                 </li>
