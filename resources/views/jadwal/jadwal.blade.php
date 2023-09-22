@@ -522,7 +522,7 @@
     <div id="updateDataModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form method="POST" action="{{ route('jadwal.update', ['prog' => 'gizi', 'year' => $year, 'month' => $month]) }}">
+                <form method="POST" action="{{ route('jadwal.update', ['prog' => $title, 'year' => $year, 'month' => $month]) }}">
                     @csrf
                     @method('PUT')
                     <input type="hidden" id="editItemId" name="editItemId" value="">

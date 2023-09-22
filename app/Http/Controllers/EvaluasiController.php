@@ -91,8 +91,9 @@ class EvaluasiController extends Controller
         return redirect($direct)->withSuccess('Berhasil tambah data!');
     }
 
-    public function update(Request $request, $prog, $id)
+    public function update(Request $request, $prog)
     {
+        $id = $request->editItemId;
         $requestData = $request->only([
             'indicator',
             'unit',
@@ -108,6 +109,7 @@ class EvaluasiController extends Controller
             'evaluasi',
         ]);
 
+        unset($requestData['editItemId']);
         $evaluasi = Evaluasi::find($id);
     
         if ($evaluasi) {
@@ -119,16 +121,14 @@ class EvaluasiController extends Controller
     
             $evaluasi->save();
         }
-        return redirect("/eval/{$prog}")->withSuccess('Berhasil update data!');
+        return back()->with('success', 'Berhasil update data!');
     }
 
-    public function delete($id, $prog)
-    {
-        $data = Evaluasi::find($id);
-        
-        Evaluasi::destroy($id);
+    public function delete(Request $request, $prog)
+    {        
+        Evaluasi::destroy($request->deleteItemId);
 
-        return redirect()->back()->withSuccess('Data berhasil dihapus');
+        return back()->with('success', 'Berhasil hapus data!');
     }
 }
 

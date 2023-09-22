@@ -446,8 +446,8 @@
                                     <td style="vertical-align:middle;text-align:center;">{{ $item->achievements/$item->target*100 }}%</td>
                                         <td style="vertical-align:middle;text-align:center;">
                                             <div style="display: flex;  gap: 10px;">
-                                                <button class="btn btn-success" data-toggle="modal" data-target="#updateDataModal" data-id="{{ $item->id }}">Edit</button>
-                                                <button class="btn btn-danger" data-toggle="modal" data-target="#deleteDataModal" data-id="{{ $item->id }}" data-prog="{{ $title }}">Hapus</button>
+                                                <button class="btn btn-success edit-btn" data-toggle="modal" data-target="#updateDataModal" data-id="{{ $item->id }}">Edit</button>
+                                                <button class="btn btn-danger delete-btn" data-toggle="modal" data-target="#deleteDataModal" data-id="{{ $item->id }}">Hapus</button>
                                             </div>
                                         </td>
                                     </tr>
@@ -559,9 +559,10 @@
     <div id="updateDataModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form method="POST" action="{{ route('report.update', ['prog' => 'gizi', 'id' => $item->id, 'year' => $year, 'month' => $month]) }}">
+                <form method="POST" action="{{ route('report.update') }}">
                     @csrf
                     @method('PUT')
+                    <input type="hidden" id="editItemId" name="editItemId" value="">
                     <div class="modal-header">						
                         <h4 class="modal-title">Edit Data</h4>
                     </div>
@@ -653,9 +654,10 @@
     <div id="deleteDataModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form id="deleteForm" method="post" action="{{ route('report.delete', ['id' => $item->id, 'prog' => $title]) }}">
+                <form id="deleteForm" method="post" action="{{ route('report.delete') }}">
                     @method('delete')
                     @csrf
+                    <input type="hidden" id="deleteItemId" name="deleteItemId" value="">
                     <div class="modal-header">                        
                         <h4 class="modal-title">Delete Data</h4>
                         <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
@@ -688,6 +690,16 @@
         function clearForm() {
             document.getElementById('edit').reset();
         }
+
+        $(document).on('click', '.edit-btn', function () {
+            var itemId = $(this).data('id'); // Ambil ID dari data-id tombol edit yang diklik
+            $('#editItemId').val(itemId); // Setel ID tersebut sebagai nilai pada input hidden di dalam modal
+        });
+
+        $(document).on('click', '.delete-btn', function () {
+            var itemId = $(this).data('id'); // Ambil ID dari data-id tombol delete yang diklik
+            $('#deleteItemId').val(itemId); // Setel ID tersebut sebagai nilai pada input hidden di dalam modal
+        });
     
     </script>
         

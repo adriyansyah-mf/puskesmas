@@ -75,9 +75,9 @@ Route::post('eval/filter/{prog}', [EvaluasiController::class, 'filter']);
 
 Route::post('/eval/{prog}/{year}/{month}', [EvaluasiController::class, 'add']);
 
-Route::put('/eval/{prog}/{id}', [EvaluasiController::class, 'update'])->name('eval.gizi.update');
+Route::put('/eval/{prog}', [EvaluasiController::class, 'update'])->name('eval.update');
 
-Route::delete('eval/delete/{id}/{prog}', [EvaluasiController::class, 'delete'])->name('eval.delete');
+Route::delete('eval/delete/{prog}', [EvaluasiController::class, 'delete'])->name('eval.delete');
 
 // report
 
@@ -85,11 +85,11 @@ Route::get('report/{prog}', [LaporanKinerjaController::class, 'index']);
 
 Route::post('report/{prog}/{year}/{month}', [LaporanKinerjaController::class, 'add']);
 
-Route::put('report/{prog}/{id}/{year}/{month}', [LaporanKinerjaController::class, 'update'])->name('report.update');
+Route::put('report', [LaporanKinerjaController::class, 'update'])->name('report.update');
 
 Route::get('report/{prog}/{year}/{month}', [LaporanKinerjaController::class, 'filter']);
 
-Route::delete('report/delete/{id}/{prog}', [LaporanKinerjaController::class, 'delete'])->name('report.delete');
+Route::delete('report/delete', [LaporanKinerjaController::class, 'delete'])->name('report.delete');
 
 // lokmun
 
