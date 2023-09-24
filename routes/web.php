@@ -92,10 +92,9 @@ Route::delete('report/delete/{id}/{prog}', [LaporanKinerjaController::class, 'de
 // lokmun
 Route::get('lokmun/{prog}', [LokmunNotulenController::class, 'index']);
 Route::post('/image-upload', [LokmunNotulenController::class, 'uploadImage'])->name('upload.image');
+Route::delete('lokmun/delete', [LokmunNotulenController::class, 'deleteImage'])->name('delete.image');
 
 
 // load image
 
 Route::get('public/uploads/lokmun/{name}', [LokmunNotulenController::class, 'getImage'])->name('get.image');
-
-// Route::post('upload/lokmun/{prog}', [LokmunNotulenController::class, 'uploadImage'])->name('upload.image');
