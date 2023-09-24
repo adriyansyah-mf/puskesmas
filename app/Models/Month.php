@@ -20,4 +20,9 @@ class month extends Model
     {
         return $this->hasMany(LaporanKinerja::class);
     }
+
+    public function jadwal()
+    {
+        return $this->hasMany(Jadwal::class);
+    }
 }

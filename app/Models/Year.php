@@ -23,4 +23,8 @@ class Year extends Model
     {
         return $this->hasMany(LaporanKinerja::class);
     }
+    public function jawal()
+    {
+        return $this->hasMany(Jadwal::class);
+    }
 }

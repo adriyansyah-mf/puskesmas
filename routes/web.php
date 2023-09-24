@@ -10,7 +10,9 @@ use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\EvaluasiController;
 use App\Http\Controllers\IndicatorController;
 use App\Http\Controllers\LaporanKinerjaController;
+use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\LokmunNotulenController;
+use App\Models\Jadwal;
 
 /*
 |--------------------------------------------------------------------------
@@ -73,9 +75,9 @@ Route::post('eval/filter/{prog}', [EvaluasiController::class, 'filter']);
 
 Route::post('/eval/{prog}/{year}/{month}', [EvaluasiController::class, 'add']);
 
-Route::put('/eval/{prog}/{id}', [EvaluasiController::class, 'update'])->name('eval.gizi.update');
+Route::put('/eval/{prog}', [EvaluasiController::class, 'update'])->name('eval.update');
 
-Route::delete('eval/delete/{id}/{prog}', [EvaluasiController::class, 'delete'])->name('eval.delete');
+Route::delete('eval/delete/{prog}', [EvaluasiController::class, 'delete'])->name('eval.delete');
 
 // report
 
@@ -83,14 +85,16 @@ Route::get('report/{prog}', [LaporanKinerjaController::class, 'index']);
 
 Route::post('report/{prog}/{year}/{month}', [LaporanKinerjaController::class, 'add']);
 
-Route::put('report/{prog}/{id}/{year}/{month}', [LaporanKinerjaController::class, 'update'])->name('report.update');
+Route::put('report', [LaporanKinerjaController::class, 'update'])->name('report.update');
 
 Route::get('report/{prog}/{year}/{month}', [LaporanKinerjaController::class, 'filter']);
 
-Route::delete('report/delete/{id}/{prog}', [LaporanKinerjaController::class, 'delete'])->name('report.delete');
+Route::delete('report/delete', [LaporanKinerjaController::class, 'delete'])->name('report.delete');
 
 // lokmun
+
 Route::get('lokmun/{prog}', [LokmunNotulenController::class, 'index']);
+
 Route::post('/image-upload', [LokmunNotulenController::class, 'uploadImage'])->name('upload.image');
 Route::delete('lokmun/delete', [LokmunNotulenController::class, 'deleteImage'])->name('delete.image');
 
@@ -98,3 +102,17 @@ Route::delete('lokmun/delete', [LokmunNotulenController::class, 'deleteImage'])-
 // load image
 
 Route::get('public/uploads/lokmun/{name}', [LokmunNotulenController::class, 'getImage'])->name('get.image');
+
+
+
+// jadwal
+
+Route::get('jadwal/{prog}', [JadwalController::class, 'index']);
+
+Route::get('jadwal/{prog}/{year}/{month}', [JadwalController::class, 'filter']);
+
+Route::post('jadwal/{prog}/{year}/{month}', [JadwalController::class, 'add']);
+
+Route::put('jadwal/{prog}//{year}/{month}', [JadwalController::class, 'update'])->name('jadwal.update');
+
+Route::delete('jadwal/delete/{prog}', [JadwalController::class, 'delete'])->name('jadwal.delete');

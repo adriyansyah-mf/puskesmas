@@ -92,9 +92,9 @@ class LaporanKinerjaController extends Controller
         return redirect($direct)->withSuccess('Berhasil tambah data!');
     }
 
-    public function update(Request $request, $prog, $id, $year, $month)
+    public function update(Request $request)
     {
-        $id_month = MonthController::get_id_by_name($month);
+        $id = $request->editItemId;
         $requestData = $request->only([
             'target',
             'unit',
@@ -111,6 +111,8 @@ class LaporanKinerjaController extends Controller
             'other',
             'achievements'
         ]);
+
+        unset($requestData['editItemId']);
 
         $data = LaporanKinerja::find($id);
     
@@ -131,17 +133,14 @@ class LaporanKinerjaController extends Controller
             IndicatorController::update($request->indicator, $data->indicator_id);
         }
             
-        return redirect("report/{$prog}/{$year}/{$id_month}")->withSuccess('Berhasil update data!');
+        return back()->with('success', 'Berhasil update data!');
     }
 
-    public function delete($id, $prog)
+    public function delete(Request $request)
     {
-        $data = LaporanKinerja::find($id);
         
-        LaporanKinerja::destroy($id);
+        LaporanKinerja::destroy($request->deleteItemId);
 
-        $year = YearController::get_year_by_id($data->year_id)[0];
-
-        return redirect("report/{$prog}/{$year}/{$data->month_id}")->withSuccess('Berhasil hapus data user!');
+        return back()->with('success', 'Berhasil hapus data!');
     }
 }
