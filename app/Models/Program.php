@@ -19,4 +19,9 @@ class Program extends Model
     {
         return $this->hasMany(evaluasi::class);
     }
+
+    public function reschedule()
+    {
+        return $this->hasMany(reschedule::class);
+    }
 }

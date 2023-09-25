@@ -12,7 +12,9 @@ use App\Http\Controllers\IndicatorController;
 use App\Http\Controllers\LaporanKinerjaController;
 use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\LokmunNotulenController;
+use App\Http\Controllers\RescheduleController;
 use App\Models\Jadwal;
+use App\Models\Reschedule;
 
 /*
 |--------------------------------------------------------------------------
@@ -116,3 +118,13 @@ Route::post('jadwal/{prog}/{year}/{month}', [JadwalController::class, 'add']);
 Route::put('jadwal/{prog}//{year}/{month}', [JadwalController::class, 'update'])->name('jadwal.update');
 
 Route::delete('jadwal/delete/{prog}', [JadwalController::class, 'delete'])->name('jadwal.delete');
+
+// reschedule
+
+Route::get('reschedule/{prog}', [RescheduleController::class, 'index']);
+
+Route::post('reschedule/{prog}', [RescheduleController::class, 'add']);
+
+Route::put('reschedule/{prog}', [RescheduleController::class, 'update'])->name('reschedule.update');
+
+Route::delete('reschedule/delete/{prog}', [RescheduleController::class, 'delete'])->name('reschedule.delete');
