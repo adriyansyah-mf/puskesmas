@@ -99,8 +99,14 @@ Route::delete('report/delete', [LaporanKinerjaController::class, 'delete'])->nam
 Route::get('lokmun/{prog}', [LokmunNotulenController::class, 'index']);
 
 Route::post('/image-upload', [LokmunNotulenController::class, 'uploadImage'])->name('upload.image');
+
 Route::delete('lokmun/delete', [LokmunNotulenController::class, 'deleteImage'])->name('delete.image');
 
+
+// gizi rapat
+Route::get('rapat/{prog}/dokumentasi', [GiziRapatController::class, 'index']);
+
+Route::post('/image-upload/gizi/dokumentasi', [GiziRapatController::class, 'uploadImage'])->name('uploadimage.dokumentasigizi');
 
 // load image
 
@@ -118,14 +124,4 @@ Route::post('jadwal/{prog}/{year}/{month}', [JadwalController::class, 'add'])-> 
 
 Route::put('jadwal/{prog}//{year}/{month}', [JadwalController::class, 'update'])->name('jadwal.update')-> middleware('auth');
 
-Route::delete('jadwal/delete/{prog}', [JadwalController::class, 'delete'])->name('jadwal.delete')-> middleware('auth');
-
-// reschedule
-
-Route::get('reschedule/{prog}', [RescheduleController::class, 'index'])-> middleware('auth');
-
-Route::post('reschedule/{prog}', [RescheduleController::class, 'add'])-> middleware('auth');
-
-Route::put('reschedule/{prog}', [RescheduleController::class, 'update'])->name('reschedule.update')-> middleware('auth');
-
-Route::delete('reschedule/delete/{prog}', [RescheduleController::class, 'delete'])->name('reschedule.delete')-> middleware('auth');
+Route::delete('jadwal/delete/{prog}', [JadwalController::class, 'delete'])->name('jadwal.delete');
