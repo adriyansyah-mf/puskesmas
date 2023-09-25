@@ -12,6 +12,7 @@ use App\Http\Controllers\IndicatorController;
 use App\Http\Controllers\LaporanKinerjaController;
 use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\LokmunNotulenController;
+use App\Http\Controllers\GiziRapatController;
 use App\Models\Jadwal;
 
 /*
@@ -116,3 +117,7 @@ Route::post('jadwal/{prog}/{year}/{month}', [JadwalController::class, 'add']);
 Route::put('jadwal/{prog}//{year}/{month}', [JadwalController::class, 'update'])->name('jadwal.update');
 
 Route::delete('jadwal/delete/{prog}', [JadwalController::class, 'delete'])->name('jadwal.delete');
+
+// gizi rapat
+Route::get('rapat/{prog}/dokumentasi', [GiziRapatController::class, 'index']);
+Route::post('/image-upload/gizi/dokumentasi', [GiziRapatController::class, 'uploadImage'])->name('uploadimage.dokumentasigizi');

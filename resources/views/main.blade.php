@@ -192,7 +192,7 @@
                                                         aria-expanded="false">Rapat Internal</a>
                 
                                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                                        <li><a class="dropdown-item" href="index.html">Dokumentasi</a></li>
+                                                        <li><a class="dropdown-item" href="rapat/gizi/dokumentasi">Dokumentasi</a></li>
                                                         <li><a class="dropdown-item" href="index.html">Notulen</a></li>
                                                         <li><a class="dropdown-item" href="index.html">Undangan</a></li>
                                                     </ul>
