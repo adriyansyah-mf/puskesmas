@@ -90,6 +90,8 @@
                                         <span>puskesmas_gubug_2@gmail.com</span>
                                     </a>
                                 </li>
+                            </ul>
+                            <ul class="contact-info pl-0 mb-4 mb-md-0 text-lg-right">
                                 <li class="item text-left">
                                     <div class="icon-box">
                                         <i class="fas fa-phone"></i>
@@ -164,7 +166,7 @@
                 
                                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                                         <li><a class="dropdown-item" href="\jadwal\gizi">Jadwal kegiatan ke desa</a></li>
-                                                        <li><a class="dropdown-item" href="index.html">Perubahan jadwal </a></li>
+                                                        <li><a class="dropdown-item" href="\reschedule\gizi">Perubahan jadwal </a></li>
                                                     </ul>
                                                 </li>
                                     
@@ -208,8 +210,63 @@
                                         aria-expanded="false">Kesling</a>
 
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <li><a class="dropdown-item" href="index.html">Dokument</a></li>
-                                        <li><a class="dropdown-item" href="index.html">Regulasi</a></li>
+                                        <li class="dropdown dropdown-submenu dropright">
+                                            <a class="dropdown-item dropdown-toggle" href="#!" id="navbarDropdown"
+                                                role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false">Dokument</a>
+        
+                                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                <li class="dropdown dropdown-submenu dropright">
+                                                    <a class="dropdown-item dropdown-toggle" href="#!" id="navbarDropdown"
+                                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">evaluasi</a>
+                
+                                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                        <li><a class="dropdown-item" href="\eval\kesling">Evaluasi kinerja program UKM</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="dropdown dropdown-submenu dropright">
+                                                    <a class="dropdown-item dropdown-toggle" href="#!" id="navbarDropdown"
+                                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">Jadwal</a>
+                
+                                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                        <li><a class="dropdown-item" href="\jadwal\kesling">Jadwal kegiatan ke desa</a></li>
+                                                        <li><a class="dropdown-item" href="\reschedule\kesling">Perubahan jadwal </a></li>
+                                                    </ul>
+                                                </li>
+                                    
+                                                <li class="dropdown dropdown-submenu dropright">
+                                                    <a class="dropdown-item dropdown-toggle" href="#!" id="navbarDropdown"
+                                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">Laporan</a>
+                
+                                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                        <li><a class="dropdown-item" href="\report\kesling">Laporan kinerja UKM pelayanan kesling masyarakat</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="dropdown dropdown-submenu dropright">
+                                                    <a class="dropdown-item dropdown-toggle" href="#!" id="navbarDropdown"
+                                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">Lokmun Linprok Linsek</a>
+                
+                                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                        <li><a class="dropdown-item" href="lokmun/kesling">Notulen</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="dropdown dropdown-submenu dropright">
+                                                    <a class="dropdown-item dropdown-toggle" href="#!" id="navbarDropdown"
+                                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">Rapat Internal</a>
+                
+                                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                        <li><a class="dropdown-item" href="index.html">Dokumentasi</a></li>
+                                                        <li><a class="dropdown-item" href="index.html">Notulen</a></li>
+                                                        <li><a class="dropdown-item" href="index.html">Undangan</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li class="dropdown dropdown-submenu dropright">
@@ -218,8 +275,63 @@
                                         aria-expanded="false">Kia</a>
 
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <li><a class="dropdown-item" href="index.html">Dokument</a></li>
-                                        <li><a class="dropdown-item" href="index.html">Regulasi</a></li>
+                                        <li class="dropdown dropdown-submenu dropright">
+                                            <a class="dropdown-item dropdown-toggle" href="#!" id="navbarDropdown"
+                                                role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false">Dokument</a>
+        
+                                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                <li class="dropdown dropdown-submenu dropright">
+                                                    <a class="dropdown-item dropdown-toggle" href="#!" id="navbarDropdown"
+                                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">evaluasi</a>
+                
+                                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                        <li><a class="dropdown-item" href="\eval\kia">Evaluasi kinerja program UKM</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="dropdown dropdown-submenu dropright">
+                                                    <a class="dropdown-item dropdown-toggle" href="#!" id="navbarDropdown"
+                                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">Jadwal</a>
+                
+                                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                        <li><a class="dropdown-item" href="\jadwal\kia">Jadwal kegiatan ke desa</a></li>
+                                                        <li><a class="dropdown-item" href="\reschedule\kia">Perubahan jadwal </a></li>
+                                                    </ul>
+                                                </li>
+                                    
+                                                <li class="dropdown dropdown-submenu dropright">
+                                                    <a class="dropdown-item dropdown-toggle" href="#!" id="navbarDropdown"
+                                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">Laporan</a>
+                
+                                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                        <li><a class="dropdown-item" href="\report\kia">Laporan kinerja UKM pelayanan kia masyarakat</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="dropdown dropdown-submenu dropright">
+                                                    <a class="dropdown-item dropdown-toggle" href="#!" id="navbarDropdown"
+                                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">Lokmun Linprok Linsek</a>
+                
+                                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                        <li><a class="dropdown-item" href="lokmun/kia">Notulen</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="dropdown dropdown-submenu dropright">
+                                                    <a class="dropdown-item dropdown-toggle" href="#!" id="navbarDropdown"
+                                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">Rapat Internal</a>
+                
+                                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                        <li><a class="dropdown-item" href="index.html">Dokumentasi</a></li>
+                                                        <li><a class="dropdown-item" href="index.html">Notulen</a></li>
+                                                        <li><a class="dropdown-item" href="index.html">Undangan</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li class="dropdown dropdown-submenu dropright">
@@ -228,8 +340,63 @@
                                         aria-expanded="false">P2P</a>
 
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <li><a class="dropdown-item" href="index.html">Dokument</a></li>
-                                        <li><a class="dropdown-item" href="index.html">Regulasi</a></li>
+                                        <li class="dropdown dropdown-submenu dropright">
+                                            <a class="dropdown-item dropdown-toggle" href="#!" id="navbarDropdown"
+                                                role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false">Dokument</a>
+        
+                                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                <li class="dropdown dropdown-submenu dropright">
+                                                    <a class="dropdown-item dropdown-toggle" href="#!" id="navbarDropdown"
+                                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">evaluasi</a>
+                
+                                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                        <li><a class="dropdown-item" href="\eval\p2p">Evaluasi kinerja program UKM</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="dropdown dropdown-submenu dropright">
+                                                    <a class="dropdown-item dropdown-toggle" href="#!" id="navbarDropdown"
+                                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">Jadwal</a>
+                
+                                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                        <li><a class="dropdown-item" href="\jadwal\p2p">Jadwal kegiatan ke desa</a></li>
+                                                        <li><a class="dropdown-item" href="\reschedule\p2p">Perubahan jadwal </a></li>
+                                                    </ul>
+                                                </li>
+                                    
+                                                <li class="dropdown dropdown-submenu dropright">
+                                                    <a class="dropdown-item dropdown-toggle" href="#!" id="navbarDropdown"
+                                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">Laporan</a>
+                
+                                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                        <li><a class="dropdown-item" href="\report\p2p">Laporan kinerja UKM pelayanan p2p masyarakat</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="dropdown dropdown-submenu dropright">
+                                                    <a class="dropdown-item dropdown-toggle" href="#!" id="navbarDropdown"
+                                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">Lokmun Linprok Linsek</a>
+                
+                                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                        <li><a class="dropdown-item" href="lokmun/p2p">Notulen</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="dropdown dropdown-submenu dropright">
+                                                    <a class="dropdown-item dropdown-toggle" href="#!" id="navbarDropdown"
+                                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">Rapat Internal</a>
+                
+                                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                        <li><a class="dropdown-item" href="index.html">Dokumentasi</a></li>
+                                                        <li><a class="dropdown-item" href="index.html">Notulen</a></li>
+                                                        <li><a class="dropdown-item" href="index.html">Undangan</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li class="dropdown dropdown-submenu dropright">
@@ -238,8 +405,63 @@
                                         aria-expanded="false">Perkesmas</a>
 
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <li><a class="dropdown-item" href="index.html">Dokument</a></li>
-                                        <li><a class="dropdown-item" href="index.html">Regulasi</a></li>
+                                        <li class="dropdown dropdown-submenu dropright">
+                                            <a class="dropdown-item dropdown-toggle" href="#!" id="navbarDropdown"
+                                                role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false">Dokument</a>
+        
+                                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                <li class="dropdown dropdown-submenu dropright">
+                                                    <a class="dropdown-item dropdown-toggle" href="#!" id="navbarDropdown"
+                                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">evaluasi</a>
+                
+                                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                        <li><a class="dropdown-item" href="\eval\perkesmas">Evaluasi kinerja program UKM</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="dropdown dropdown-submenu dropright">
+                                                    <a class="dropdown-item dropdown-toggle" href="#!" id="navbarDropdown"
+                                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">Jadwal</a>
+                
+                                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                        <li><a class="dropdown-item" href="\jadwal\perkesmas">Jadwal kegiatan ke desa</a></li>
+                                                        <li><a class="dropdown-item" href="\reschedule\perkesmas">Perubahan jadwal </a></li>
+                                                    </ul>
+                                                </li>
+                                    
+                                                <li class="dropdown dropdown-submenu dropright">
+                                                    <a class="dropdown-item dropdown-toggle" href="#!" id="navbarDropdown"
+                                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">Laporan</a>
+                
+                                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                        <li><a class="dropdown-item" href="\report\perkesmas">Laporan kinerja UKM pelayanan perkesmas masyarakat</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="dropdown dropdown-submenu dropright">
+                                                    <a class="dropdown-item dropdown-toggle" href="#!" id="navbarDropdown"
+                                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">Lokmun Linprok Linsek</a>
+                
+                                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                        <li><a class="dropdown-item" href="lokmun/perkesmas">Notulen</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="dropdown dropdown-submenu dropright">
+                                                    <a class="dropdown-item dropdown-toggle" href="#!" id="navbarDropdown"
+                                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">Rapat Internal</a>
+                
+                                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                        <li><a class="dropdown-item" href="index.html">Dokumentasi</a></li>
+                                                        <li><a class="dropdown-item" href="index.html">Notulen</a></li>
+                                                        <li><a class="dropdown-item" href="index.html">Undangan</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li class="dropdown dropdown-submenu dropright">
@@ -248,8 +470,63 @@
                                         aria-expanded="false">Promkes</a>
 
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <li><a class="dropdown-item" href="index.html">Dokument</a></li>
-                                        <li><a class="dropdown-item" href="index.html">Regulasi</a></li>
+                                        <li class="dropdown dropdown-submenu dropright">
+                                            <a class="dropdown-item dropdown-toggle" href="#!" id="navbarDropdown"
+                                                role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false">Dokument</a>
+        
+                                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                <li class="dropdown dropdown-submenu dropright">
+                                                    <a class="dropdown-item dropdown-toggle" href="#!" id="navbarDropdown"
+                                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">evaluasi</a>
+                
+                                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                        <li><a class="dropdown-item" href="\eval\promkles">Evaluasi kinerja program UKM</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="dropdown dropdown-submenu dropright">
+                                                    <a class="dropdown-item dropdown-toggle" href="#!" id="navbarDropdown"
+                                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">Jadwal</a>
+                
+                                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                        <li><a class="dropdown-item" href="\jadwal\promkes">Jadwal kegiatan ke desa</a></li>
+                                                        <li><a class="dropdown-item" href="\reschedule\promkes">Perubahan jadwal </a></li>
+                                                    </ul>
+                                                </li>
+                                    
+                                                <li class="dropdown dropdown-submenu dropright">
+                                                    <a class="dropdown-item dropdown-toggle" href="#!" id="navbarDropdown"
+                                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">Laporan</a>
+                
+                                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                        <li><a class="dropdown-item" href="\report\promkes">Laporan kinerja UKM pelayanan promkes masyarakat</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="dropdown dropdown-submenu dropright">
+                                                    <a class="dropdown-item dropdown-toggle" href="#!" id="navbarDropdown"
+                                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">Lokmun Linprok Linsek</a>
+                
+                                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                        <li><a class="dropdown-item" href="lokmun/promkes">Notulen</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="dropdown dropdown-submenu dropright">
+                                                    <a class="dropdown-item dropdown-toggle" href="#!" id="navbarDropdown"
+                                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">Rapat Internal</a>
+                
+                                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                        <li><a class="dropdown-item" href="index.html">Dokumentasi</a></li>
+                                                        <li><a class="dropdown-item" href="index.html">Notulen</a></li>
+                                                        <li><a class="dropdown-item" href="index.html">Undangan</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
                                     </ul>
                                 </li>
                             </ul>
@@ -273,8 +550,63 @@
                                         aria-expanded="false">Kesjiwa</a>
 
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <li><a class="dropdown-item" href="index.html">Dokument</a></li>
-                                        <li><a class="dropdown-item" href="index.html">Regulasi</a></li>
+                                        <li class="dropdown dropdown-submenu dropright">
+                                            <a class="dropdown-item dropdown-toggle" href="#!" id="navbarDropdown"
+                                                role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false">Dokument</a>
+        
+                                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                <li class="dropdown dropdown-submenu dropright">
+                                                    <a class="dropdown-item dropdown-toggle" href="#!" id="navbarDropdown"
+                                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">evaluasi</a>
+                
+                                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                        <li><a class="dropdown-item" href="\eval\kesjiwa">Evaluasi kinerja program UKM</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="dropdown dropdown-submenu dropright">
+                                                    <a class="dropdown-item dropdown-toggle" href="#!" id="navbarDropdown"
+                                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">Jadwal</a>
+                
+                                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                        <li><a class="dropdown-item" href="\jadwal\kesjiwa">Jadwal kegiatan ke desa</a></li>
+                                                        <li><a class="dropdown-item" href="\reschedule\kesjiwa">Perubahan jadwal </a></li>
+                                                    </ul>
+                                                </li>
+                                    
+                                                <li class="dropdown dropdown-submenu dropright">
+                                                    <a class="dropdown-item dropdown-toggle" href="#!" id="navbarDropdown"
+                                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">Laporan</a>
+                
+                                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                        <li><a class="dropdown-item" href="\report\kesjiwa">Laporan kinerja UKM pelayanan kesjiwa masyarakat</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="dropdown dropdown-submenu dropright">
+                                                    <a class="dropdown-item dropdown-toggle" href="#!" id="navbarDropdown"
+                                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">Lokmun Linprok Linsek</a>
+                
+                                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                        <li><a class="dropdown-item" href="lokmun/kesjiwa">Notulen</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="dropdown dropdown-submenu dropright">
+                                                    <a class="dropdown-item dropdown-toggle" href="#!" id="navbarDropdown"
+                                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">Rapat Internal</a>
+                
+                                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                        <li><a class="dropdown-item" href="index.html">Dokumentasi</a></li>
+                                                        <li><a class="dropdown-item" href="index.html">Notulen</a></li>
+                                                        <li><a class="dropdown-item" href="index.html">Undangan</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
                                     </ul>
                                 </li>
                                 <li class="dropdown dropdown-submenu dropright">
@@ -283,8 +615,63 @@
                                         aria-expanded="false">PKPR</a>
 
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <li><a class="dropdown-item" href="index.html">Dokument</a></li>
-                                        <li><a class="dropdown-item" href="index.html">Regulasi</a></li>
+                                        <li class="dropdown dropdown-submenu dropright">
+                                            <a class="dropdown-item dropdown-toggle" href="#!" id="navbarDropdown"
+                                                role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                aria-expanded="false">Dokument</a>
+        
+                                            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                <li class="dropdown dropdown-submenu dropright">
+                                                    <a class="dropdown-item dropdown-toggle" href="#!" id="navbarDropdown"
+                                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">evaluasi</a>
+                
+                                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                        <li><a class="dropdown-item" href="\eval\pkpr">Evaluasi kinerja program UKM</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="dropdown dropdown-submenu dropright">
+                                                    <a class="dropdown-item dropdown-toggle" href="#!" id="navbarDropdown"
+                                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">Jadwal</a>
+                
+                                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                        <li><a class="dropdown-item" href="\jadwal\pkpr">Jadwal kegiatan ke desa</a></li>
+                                                        <li><a class="dropdown-item" href="\reschedule\pkpr">Perubahan jadwal </a></li>
+                                                    </ul>
+                                                </li>
+                                    
+                                                <li class="dropdown dropdown-submenu dropright">
+                                                    <a class="dropdown-item dropdown-toggle" href="#!" id="navbarDropdown"
+                                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">Laporan</a>
+                
+                                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                        <li><a class="dropdown-item" href="\report\pkpr">Laporan kinerja UKM pelayanan pkpr masyarakat</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="dropdown dropdown-submenu dropright">
+                                                    <a class="dropdown-item dropdown-toggle" href="#!" id="navbarDropdown"
+                                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">Lokmun Linprok Linsek</a>
+                
+                                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                        <li><a class="dropdown-item" href="lokmun/pkpr">Notulen</a></li>
+                                                    </ul>
+                                                </li>
+                                                <li class="dropdown dropdown-submenu dropright">
+                                                    <a class="dropdown-item dropdown-toggle" href="#!" id="navbarDropdown"
+                                                        role="button" data-toggle="dropdown" aria-haspopup="true"
+                                                        aria-expanded="false">Rapat Internal</a>
+                
+                                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                        <li><a class="dropdown-item" href="index.html">Dokumentasi</a></li>
+                                                        <li><a class="dropdown-item" href="index.html">Notulen</a></li>
+                                                        <li><a class="dropdown-item" href="index.html">Undangan</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
                                     </ul>
                                 </li>
                             </ul>
@@ -314,7 +701,7 @@
 
                                     @if ( $userRoles == 'admin')
                                         <li><a class="dropdown-item" href="/user" style="text-align: center">Admin</a>
-                                            <div class="col-md-7" style="margin-left:2rem; background-color: #48bdc5;height: 1px;">
+                                            <div class="col-md-8" style="margin-left:1rem; background-color: #48bdc5;height: 1px;">
                                             </div>
                                     @endif
 

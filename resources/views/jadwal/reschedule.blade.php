@@ -314,39 +314,12 @@
                     </ul>
                 </div>
             @endif
-            {{-- filter data --}}
-            <form>
-                <div class="form-row align-items-center">
-                    <div class="col-sm-3 my-1">
-                        <label class="my-1 mr-2" for="inlineFormInputYear">Tahun</label>
-                        <input type="number" class="form-control" id="year" name="year" required>
-                    </div>
-                    <div class="col-sm-3 my-1">
-                        <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Bulan</label>
-                        <select id="month" name="month" class="custom-select my-1 mr-sm-2" required>
-                            <option value=""></option>
-                            @if ($filter_month)
-                                @foreach ($filter_month as $no => $item)
-                                    <option value={{ $item->id }}>{{ $item->name }}</option>
-                                @endforeach
-                            @endif
-                        </select>
-                    </div class="col-sm-3 my-1">
-                    <div class="col-sm-3 my-1">
-                        <div class="col-sm-3 my-1">
-                        </div>
-                    </div>
-                </div>
-            </form>
-            <button  id="filterButton" class="btn btn-primary mb-3">Filter</button>
-            {{-- filter data end --}}
-
 
             <div class="service-overview section">
 
                 <div class="container text-center">
                     <h6>
-                        JADWAL KEGIATAN DESA BULAN {{ strtoupper($month) }} {{ $year }}
+                    PENYAMPAIAN INFORMASI JADWAL
                     </h6>
                     <h1><br></h1>
                 </div>
@@ -362,40 +335,31 @@
                             <thead>
                                 <tr>
                                     <th style="vertical-align:middle;text-align:center;">Tanggal</th>
-                                    <th style="vertical-align:middle;text-align:center;">Hari</th>
-                                    <th style="vertical-align:middle;text-align:center;">program</th>
-                                    <th style="vertical-align:middle;text-align:center;">Kegiatan</th>
-                                    <th style="vertical-align:middle;text-align:center;">Tempat</th>
-                                    <th style="vertical-align:middle;text-align:center;">Petugas</th>
+                                    <th style="vertical-align:middle;text-align:center;">Informsi Perubahan Jadwal</th>
+                                    <th style="vertical-align:middle;text-align:center;">Sasaran</th>
+                                    <th style="vertical-align:middle;text-align:center;">Evaluasi</th>
+                                    <th style="vertical-align:middle;text-align:center;">Tindak Lanjut</th>
+                                    <th style="vertical-align:middle;text-align:center;">Keterangan</th>
                                     <th style="vertical-align:middle;text-align:center;">Aksi</th>
                                 </tr>
                             </thead>
                             <tbody>
                         
                                 @if ($data)
-                                    <?php $date = 0; $program = ''; ?>
-                                    
                                     @foreach ($data as $item)
                                         <tr>
-                                            @if ($item->date !== $date)
-                                                <?php $date = $item->date; $program = ''?>
-                                                    <td style="vertical-align:middle;text-align:center;">{{ $item->date }}</td>
-                                                    <td style="vertical-align:middle;text-align:center;">{{ $item->day }}</td>
-                                            @else
-                                                <td style="vertical-align:middle;text-align:center;"></td>
-                                                <td style="vertical-align:middle;text-align:center;"></td>
-                                            @endif
-                                
-                                            @if ($item->program !== $program)
-                                                <?php $program = $item->program; ?>
-                                                <td style="vertical-align:middle;text-align:center;">{{ $item->program }}</td>
-                                            @else
-                                                <td style="vertical-align:middle;text-align:center;"></td>
-                                            @endif
-                                
-                                            <td style="vertical-align:middle;text-align:center;">{{ $item->activity }}</td>
-                                            <td style="vertical-align:middle;text-align:center;">{{ $item->place }}</td>
-                                            <td style="vertical-align:middle;text-align:center;">{{ $item->officer }}</td>
+                                            <td style="vertical-align:middle;text-align:center;">
+                                                <?php
+                                                $originalDate = $item->date;
+                                                $carbonDate = \Carbon\Carbon::createFromFormat('Y-m-d', $originalDate);
+                                                ?>
+                                                {{ $carbonDate->format('d-m-Y') }}
+                                            </td>
+                                            <td style="vertical-align:middle;text-align:center;">{{ $item->info_reschedule }}</td>
+                                            <td style="vertical-align:middle;text-align:center;">{{ $item->target }}</td>
+                                            <td style="vertical-align:middle;text-align:center;">{{ $item->evaluation }}</td>
+                                            <td style="vertical-align:middle;text-align:center;">{{ $item->follow_up }}</td>
+                                            <td style="vertical-align:middle;text-align:center;">{{ $item->information }}</td>
                                             <td style="vertical-align:middle;text-align:center;">
                                                 <div style="display: flex;  gap: 10px;">
                                                     <button class="btn btn-success edit-btn" data-toggle="modal" data-target="#updateDataModal" data-id="{{ $item->id }}">Edit</button>
@@ -416,7 +380,7 @@
     <div id="addDataModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form method="post" action="/jadwal/{{ $title }}/{{ $year }}/{{ $month }}">
+                <form method="post" action="/reschedule/{{ $title }}">
                     @csrf
                     <div class="modal-header">						
                         <h4 class="modal-title">Tambah Data</h4>
@@ -424,86 +388,54 @@
                     </div>
                     <div class="modal-body">					
                         <div class="form-group">
-                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">tanggal</label>
-                            <select id="date" name="date" class="custom-select my-1 mr-sm-2" required>
-                                <option value="1">1</option>
-                                <option value='2'>1</option>
-                                <option value='3'>2</option>
-                                <option value='4'>3</option>
-                                <option value='5'>5</option>
-                                <option value='6'>6</option>
-                                <option value='7'>7</option>
-                                <option value='8'>8</option>
-                                <option value='9'>9</option>
-                                <option value='10'>10</option>
-                                <option value='11'>11</option>
-                                <option value='12'>12</option>
-                                <option value='13'>13</option>
-                                <option value='14'>14</option>
-                                <option value='15'>15</option>
-                                <option value='16'>16</option>
-                                <option value='17'>17</option>
-                                <option value='18'>18</option>
-                                <option value='19'>19</option>
-                                <option value='20'>20</option>
-                                <option value='21'>21</option>
-                                <option value='22'>22</option>
-                                <option value='23'>23</option>
-                                <option value='24'>24</option>
-                                <option value='25'>25</option>
-                                <option value='26'>26</option>
-                                <option value='27'>27</option>
-                                <option value='28'>28</option>
-                                <option value='29'>29</option>
-                                <option value='30'>30</option>
-                                <option value='31'>31</option>
-                            </select>
-                        </div>					
-                        <div class="form-group">
-                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Hari</label>
-                            <select id="day" name="day" class="custom-select my-1 mr-sm-2" required>
-                                <option value="senin">Senin</option>
-                                <option value="selasa">Selasa</option>
-                                <option value="rabu">Rabu</option>
-                                <option value="kamis">Kamis</option>
-                                <option value="jum'at">Jum'at</option>
-                                <option value="sabtu">Sabtu</option>
-                                <option value="minggu">Mingu</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Program</label>
-                            <select id="prog" name="prog" class="custom-select my-1 mr-sm-2" required>
-                                <option value="promkes">Promkes</option>
-                                <option value="perkesmas">Perkesmas</option>
-                                <option value="p2p">P2P</option>
-                                <option value="kia">KIA</option>
-                                <option value="kesling">Kesling</option>
-                                <option value="gizi">Gizi</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>kegiatan</label>
-                            <input type="text" id="activity" name="activity" class="form-control @error('activity') is-invalid @enderror" value="{{ old('activity') }}" required>
-                            @error('activity')
+                            <label>Tanggal</label>
+                            <input type="date" id="date" name="date" class="form-control @error('date') is-invalid @enderror" value="{{ old('date') }}" required>
+                            @error('date')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label>Tempat</label>
-                            <input type="text" id="place" name="place" class="form-control @error('place') is-invalid @enderror" value="{{ old('place') }}" required>
-                            @error('place')
+                            <label>Informasi Perubahan Jadwal</label>
+                            <input type="text" id="info_reschedule" name="info_reschedule" class="form-control @error('place') is-invalid @enderror" value="{{ old('info_reschedule') }}" required>
+                            @error('info_reschedule')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label>Petugas</label>
-                            <input type="text" id="officer" name="officer" class="form-control @error('officer') is-invalid @enderror" value="{{ old('officer') }}" required>
-                            @error('officer')
+                            <label>Sasaran</label>
+                            <input type="text" id="target" name="target" class="form-control @error('target') is-invalid @enderror" value="{{ old('target') }}" required>
+                            @error('target')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label>Evaluasi</label>
+                            <input type="text" id="evaluation" name="evaluation" class="form-control @error('evaluation') is-invalid @enderror" value="{{ old('evaluation') }}" required>
+                            @error('evaluation')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label>Tindak Lanjut</label>
+                            <input type="text" id="follow_up" name="follow_up" class="form-control @error('follow_up') is-invalid @enderror" value="{{ old('follow_up') }}" required>
+                            @error('follow_up')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label>Keterangan</label>
+                            <input type="text" id="information" name="information" class="form-control @error('information') is-invalid @enderror" value="{{ old('information') }}" required>
+                            @error('information')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
@@ -522,7 +454,7 @@
     <div id="updateDataModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form method="POST" action="{{ route('jadwal.update', ['prog' => $title, 'year' => $year, 'month' => $month]) }}">
+                <form method="POST" action="{{ route('reschedule.update', ['prog' => $title]) }}">
                     @csrf
                     @method('PUT')
                     <input type="hidden" id="editItemId" name="editItemId" value="">
@@ -531,89 +463,54 @@
                     </div>
                     <div class="modal-body">					
                         <div class="form-group">
-                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">tanggal</label>
-                            <select id="date" name="date" class="custom-select my-1 mr-sm-2">
-                                <option value=""></option>
-                                <option value="1">1</option>
-                                <option value='2'>1</option>
-                                <option value='3'>2</option>
-                                <option value='4'>3</option>
-                                <option value='5'>5</option>
-                                <option value='6'>6</option>
-                                <option value='7'>7</option>
-                                <option value='8'>8</option>
-                                <option value='9'>9</option>
-                                <option value='10'>10</option>
-                                <option value='11'>11</option>
-                                <option value='12'>12</option>
-                                <option value='13'>13</option>
-                                <option value='14'>14</option>
-                                <option value='15'>15</option>
-                                <option value='16'>16</option>
-                                <option value='17'>17</option>
-                                <option value='18'>18</option>
-                                <option value='19'>19</option>
-                                <option value='20'>20</option>
-                                <option value='21'>21</option>
-                                <option value='22'>22</option>
-                                <option value='23'>23</option>
-                                <option value='24'>24</option>
-                                <option value='25'>25</option>
-                                <option value='26'>26</option>
-                                <option value='27'>27</option>
-                                <option value='28'>28</option>
-                                <option value='29'>29</option>
-                                <option value='30'>30</option>
-                                <option value='31'>31</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Hari</label>
-                            <select id="day" name="day" class="custom-select my-1 mr-sm-2">
-                                <option value=""></option>
-                                <option value="senin">Senin</option>
-                                <option value="selasa">Selasa</option>
-                                <option value="rabu">Rabu</option>
-                                <option value="kamis">Kamis</option>
-                                <option value="jum'at">Jum'at</option>
-                                <option value="sabtu">Sabtu</option>
-                                <option value="minggu">Mingu</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label class="my-1 mr-2" for="inlineFormCustomSelectPref">Program</label>
-                            <select id="prog" name="prog" class="custom-select my-1 mr-sm-2">
-                                <option value=""></option>
-                                <option value="promkes">Promkes</option>
-                                <option value="perkesmas">Perkesmas</option>
-                                <option value="p2p">P2P</option>
-                                <option value="kia">KIA</option>
-                                <option value="kesling">Kesling</option>
-                                <option value="gizi">Gizi</option>
-                            </select>
-                        </div>
-                        <div class="form-group">
-                            <label>kegiatan</label>
-                            <input type="text" id="activity" name="activity" class="form-control @error('activity') is-invalid @enderror" value="{{ old('activity') }}">
-                            @error('activity')
+                            <label>Tanggal</label>
+                            <input type="date" id="date" name="date" class="form-control @error('date') is-invalid @enderror" value="{{ old('date') }}">
+                            @error('date')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label>Tempat</label>
-                            <input type="text" id="place" name="place" class="form-control @error('place') is-invalid @enderror" value="{{ old('place') }}">
-                            @error('place')
+                            <label>Informasi Perubahan Jadwal</label>
+                            <input type="text" id="info_reschedule" name="info_reschedule" class="form-control @error('place') is-invalid @enderror" value="{{ old('info_reschedule') }}">
+                            @error('info_reschedule')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
                             @enderror
                         </div>
                         <div class="form-group">
-                            <label>Petugas</label>
-                            <input type="text" id="officer" name="officer" class="form-control @error('officer') is-invalid @enderror" value="{{ old('officer') }}">
-                            @error('officer')
+                            <label>Sasaran</label>
+                            <input type="text" id="target" name="target" class="form-control @error('target') is-invalid @enderror" value="{{ old('target') }}">
+                            @error('target')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label>Evaluasi</label>
+                            <input type="text" id="evaluation" name="evaluation" class="form-control @error('evaluation') is-invalid @enderror" value="{{ old('evaluation') }}">
+                            @error('evaluation')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label>Tindak Lanjut</label>
+                            <input type="text" id="follow_up" name="follow_up" class="form-control @error('follow_up') is-invalid @enderror" value="{{ old('follow_up') }}">
+                            @error('follow_up')
+                            <div class="invalid-feedback">
+                                {{ $message }}
+                            </div>
+                            @enderror
+                        </div>
+                        <div class="form-group">
+                            <label>Keterangan</label>
+                            <input type="text" id="information" name="information" class="form-control @error('information') is-invalid @enderror" value="{{ old('information') }}">
+                            @error('information')
                             <div class="invalid-feedback">
                                 {{ $message }}
                             </div>
@@ -631,7 +528,7 @@
     <div id="deleteDataModal" class="modal fade">
         <div class="modal-dialog">
             <div class="modal-content">
-                <form id="deleteForm" method="post" action="{{ route('jadwal.delete', ['prog' => $title]) }}">
+                <form id="deleteForm" method="post" action="{{ route('reschedule.delete', ['prog' => $title]) }}">
                     @method('delete')
                     @csrf
                     <input type="hidden" id="deleteItemId" name="deleteItemId" value="">
@@ -652,21 +549,6 @@
         </div>
     </div>
     <script>
-        document.getElementById('filterButton').addEventListener('click', function () {
-            // Dapatkan nilai Tahun dan Bulan yang dipilih
-            var yearValue = document.getElementById('year').value;
-            var monthValue = document.getElementById('month').value;
-    
-            // Membangun URL dengan nilai Tahun dan Bulan
-            var url = 'gizi/' + yearValue + '/' + monthValue;
-    
-            // Arahkan browser ke URL tersebut
-            window.location.href = url;
-        });
-    
-        function clearForm() {
-            document.getElementById('edit').reset();
-        }
 
         $(document).on('click', '.edit-btn', function () {
             var itemId = $(this).data('id'); // Ambil ID dari data-id tombol edit yang diklik
