@@ -14,7 +14,7 @@ class LokmunNotulenController extends Controller
     public function index($prog){
 
         // $images = DB::table('images')->where('type', 'lokmun')->get();
-        $images = Image::where('type', 'lokmun_notulen')->orderBy('created_at', 'desc')->paginate(9);
+        $images = Image::where('type', 'gizi_lokmun_notulen')->orderBy('created_at', 'desc')->paginate(9);
 
         // limit title in images
         foreach ($images as $image) {
@@ -36,7 +36,7 @@ class LokmunNotulenController extends Controller
         // Retrieve the specific image by name and type
 
         // Retrieve all 'lokmun_notulen' images
-        $images = Image::where('type', 'lokmun_notulen')->get();
+        $images = Image::where('type', 'gizi_lokmun_notulen')->get();
 
         return view('lokmun.notulen', [
             'images' => $images,
@@ -74,7 +74,7 @@ class LokmunNotulenController extends Controller
                 Image::create([
                     'name' => $imageName,
                     'title' => $request->title,
-                    'type' => 'lokmun_notulen'
+                    'type' => 'gizi_lokmun_notulen'
                 ]);
 
                 return back();
