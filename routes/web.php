@@ -96,17 +96,34 @@ Route::delete('report/delete', [LaporanKinerjaController::class, 'delete'])->nam
 
 // lokmun
 
-Route::get('lokmun/{prog}', [LokmunNotulenController::class, 'index']);
+Route::get('lokmun/{prog}/{view_name}', [LokmunNotulenController::class, 'index'])->middleware('auth')->where('type', 'kesling_lokmun_notulen');
 
-Route::post('/image-upload', [LokmunNotulenController::class, 'uploadImage'])->name('upload.image');
+Route::post('/image-upload/{prog}', [LokmunNotulenController::class, 'uploadImage'])->name('upload.image')->middleware('auth');
 
-Route::delete('lokmun/delete', [LokmunNotulenController::class, 'deleteImage'])->name('delete.image');
+Route::delete('lokmun/delete', [LokmunNotulenController::class, 'deleteImage'])->name('delete.image')->middleware('auth');
+
+
 
 
 // gizi rapat
-Route::get('rapat/{prog}/dokumentasi', [GiziRapatController::class, 'index']);
+Route::get('rapat/{prog}/dokumentasi', [GiziRapatController::class, 'index'])->middleware('auth');
 
-Route::post('/image-upload/gizi/dokumentasi', [GiziRapatController::class, 'uploadImage'])->name('uploadimage.dokumentasigizi');
+Route::post('/image-upload/gizi/dokumentasi', [GiziRapatController::class, 'uploadImage'])->name('uploadimage.dokumentasigizi')->middleware('auth');
+
+Route::delete('rapat/gizi/dokumentasi/delete', [GiziRapatController::class, 'deleteImageDokumentasiGizi'])->name('deleteimage.dokumentasigizi')->middleware('auth');
+
+Route::get('rapat/{prog}/notulen', [GiziRapatController::class, 'IndexNotulen'])->name('indexnotulengizi')->middleware('auth');
+
+Route::post('/image-upload/gizi/notulen', [GiziRapatController::class, 'uploadImageNotulenRapat'])->name('uploadimage.notulengizi')->middleware('auth');
+
+Route::delete('rapat/gizi/notulen/delete', [GiziRapatController::class, 'deleteImageNotulenGizi'])->name('deleteimage.notulengizi')->middleware('auth');
+
+Route::get('rapat/{prog}/undangan', [GiziRapatController::class, 'IndexUndangan'])->middleware('auth');
+
+Route::post('/image-upload/gizi/undangan', [GiziRapatController::class, 'uploadImagUndanganRapat'])->name('uploadimage.undangan')->middleware('auth');
+
+Route::delete('rapat/gizi/undangan/delete', [GiziRapatController::class, 'deleteImageUndanganGizi'])->name('deleteimage.undangan')->middleware('auth');
+
 
 // load image
 

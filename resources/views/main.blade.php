@@ -185,7 +185,7 @@
                                                         aria-expanded="false">Lokmun Linprok Linsek</a>
                 
                                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                                        <li><a class="dropdown-item" href="lokmun/gizi">Notulen</a></li>
+                                                        <li><a class="dropdown-item" href="lokmun/gizi_lokmun_notulen/notulen">Notulen</a></li>
                                                     </ul>
                                                 </li>
                                                 <li class="dropdown dropdown-submenu dropright">
@@ -195,8 +195,8 @@
                 
                                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                                         <li><a class="dropdown-item" href="rapat/gizi/dokumentasi">Dokumentasi</a></li>
-                                                        <li><a class="dropdown-item" href="index.html">Notulen</a></li>
-                                                        <li><a class="dropdown-item" href="index.html">Undangan</a></li>
+                                                        <li><a class="dropdown-item" href="rapat/gizi/notulen">Notulen</a></li>
+                                                        <li><a class="dropdown-item" href="rapat/gizi">Undangan</a></li>
                                                     </ul>
                                                 </li>
                                             </ul>
@@ -251,7 +251,7 @@
                                                         aria-expanded="false">Lokmun Linprok Linsek</a>
                 
                                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                                        <li><a class="dropdown-item" href="lokmun/kesling">Notulen</a></li>
+                                                        <li><a class="dropdown-item" href="lokmun/kesling_lokmun_notulen/kesling">notulen</a></li>
                                                     </ul>
                                                 </li>
                                                 <li class="dropdown dropdown-submenu dropright">

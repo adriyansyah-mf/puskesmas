@@ -27,7 +27,7 @@
                 </a>
             </div>
             <div class="row">
-                @foreach ($images as $image)
+                @foreach ($images->where('type', 'gizi_lokmun_notulen') as $image)
                 <div class="col-md-4 mb-4">
                     <div class="card">
                         <img src="{{ asset('storage/uploads/lokmun/' . $image->name) }}" class="card-img-top" alt="{{ $image->title }}">
@@ -62,7 +62,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="{{ route('upload.image') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('upload.image', ['prog' => 'gizi_lokmun_notulen']) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-body">
                     <div class="form-group">
@@ -74,10 +74,12 @@
                         <input type="text" class="form-control" id="exampleFormControlFile" name="title" placeholder="Enter title here">
                     </div>
                 </div>
+                <input type="hidden" name="type" value="gizi_lokmun_notulen" />
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-primary">Upload</button>
                 </div>
+                
             </form>
         </div>
     </div>
@@ -178,7 +180,6 @@
                         },
                         success: function(response) {
                             // Handle success here (e.g., remove the image from the gallery)
-                            console.log('hahahaha');
                             // You can also close the modal or update the UI as needed
                             $('#imageModal').modal('hide');
 

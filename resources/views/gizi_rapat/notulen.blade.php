@@ -30,7 +30,7 @@
                 @foreach ($images as $image)
                 <div class="col-md-4 mb-4">
                     <div class="card">
-                        <img src="{{ asset('storage/uploads/dokumentasi/' . $image->name) }}" class="card-img-top" alt="{{ $image->title }}">
+                        <img src="{{ asset('storage/uploads/notulen/' . $image->name) }}" class="card-img-top" alt="{{ $image->title }}">
                         <div class="card-body">
                             <h5 class="card-title">
                                 <a href="#" data-toggle="modal" data-target="#imageModal" data-image-name="{{ $image->name }}" data-image-title="{{ $image->title }}" class="open-detail-link">{{ $image->title }}</a>
@@ -62,7 +62,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="{{ route('uploadimage.dokumentasigizi') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('uploadimage.notulengizi') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-body">
                     <div class="form-group">
@@ -127,7 +127,7 @@
 
         // Set the image source dynamically
         var image = document.getElementById('modalImage');
-        image.src = "{{ asset('storage/uploads/dokumentasi') }}/" + imageName;
+        image.src = "{{ asset('storage/uploads/notulen') }}/" + imageName;
 
         // Set the truncated title
         var title = document.getElementById('imageModalLabel');
@@ -135,11 +135,11 @@
 
         // Set the href for the "Open Detail" button
         var openDetailButton = document.getElementById('openDetailButton');
-        openDetailButton.href = "{{ asset('storage/uploads/dokumentasi') }}/" + imageName;
+        openDetailButton.href = "{{ asset('storage/uploads/notulen') }}/" + imageName;
 
         // Set the href for the "Delete" button
         var deleteButton = document.getElementById('deleteButton');
-        deleteButton.href = "{{ route('deleteimage.dokumentasigizi') }}?name=" + imageName;
+        deleteButton.href = "{{ route('deleteimage.notulengizi') }}?name=" + imageName;
 
         // Store the current image name for later use
         currentImageName = imageName;

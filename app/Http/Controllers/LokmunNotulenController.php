@@ -11,18 +11,19 @@ use PhpOffice\PhpWord\IOFactory;
 
 class LokmunNotulenController extends Controller
 {
-    public function index($prog){
+    public function index($prog, $view_name){
 
         // $images = DB::table('images')->where('type', 'lokmun')->get();
-        $images = Image::where('type', 'gizi_lokmun_notulen')->orderBy('created_at', 'desc')->paginate(9);
+        $images = Image::where('type', $prog)->orderBy('created_at', 'desc')->paginate(9);
 
         // limit title in images
         foreach ($images as $image) {
             $image->title = Str::limit($image->title, 22);
         }
 
-      
-        return view('lokmun.notulen',[
+        $viewName = 'lokmun.'.$view_name;
+
+        return view($viewName,[
             "title" => "$prog",
             "path" => "lokmin_linprog_linsek",
             "images" => $images
@@ -46,9 +47,11 @@ class LokmunNotulenController extends Controller
 
     public function uploadImage(Request $request)
         {
+
             $request->validate([
                 'image' => 'required|file|mimes:jpeg,png,jpg,gif,pdf,docx|max:2048',
             ]);
+
             $image = $request->file('image');
             $imageName = time() . '.' . $image->getClientOriginalExtension();
 
@@ -74,7 +77,7 @@ class LokmunNotulenController extends Controller
                 Image::create([
                     'name' => $imageName,
                     'title' => $request->title,
-                    'type' => 'gizi_lokmun_notulen'
+                    'type' => $request->type
                 ]);
 
                 return back();
