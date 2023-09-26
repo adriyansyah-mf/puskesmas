@@ -196,7 +196,7 @@
                                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                                         <li><a class="dropdown-item" href="rapat/gizi/dokumentasi">Dokumentasi</a></li>
                                                         <li><a class="dropdown-item" href="rapat/gizi/notulen">Notulen</a></li>
-                                                        <li><a class="dropdown-item" href="rapat/gizi">Undangan</a></li>
+                                                        <li><a class="dropdown-item" href="rapat/gizi/undangan">Undangan</a></li>
                                                     </ul>
                                                 </li>
                                             </ul>
@@ -260,9 +260,9 @@
                                                         aria-expanded="false">Rapat Internal</a>
                 
                                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                                        <li><a class="dropdown-item" href="index.html">Dokumentasi</a></li>
-                                                        <li><a class="dropdown-item" href="index.html">Notulen</a></li>
-                                                        <li><a class="dropdown-item" href="index.html">Undangan</a></li>
+                                                        <li><a class="dropdown-item" href="{{route('KeslingDokumentasi')}}">Dokumentasi</a></li>
+                                                        <li><a class="dropdown-item" href="rapat/kesling/notulen">Notulen</a></li>
+                                                        <li><a class="dropdown-item" href="rapat/kesling/undangan">Undangan</a></li>
                                                     </ul>
                                                 </li>
                                             </ul>

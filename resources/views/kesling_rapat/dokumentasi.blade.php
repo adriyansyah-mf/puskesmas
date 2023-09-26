@@ -62,7 +62,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="{{ route('uploadimage.dokumentasigizi') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('uploadimage.dokumentasikesling') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-body">
                     <div class="form-group">
@@ -74,7 +74,7 @@
                         <input type="text" class="form-control" id="exampleFormControlFile" name="title" placeholder="Enter title here">
                     </div>
                 </div>
-                <input type="hidden" name="type" value="dokumentasi_rapat_gizi" />
+                <input type="hidden" name="type" value="dokumentasi_rapat_kesling" />
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-primary">Upload</button>
@@ -140,7 +140,7 @@
 
         // Set the href for the "Delete" button
         var deleteButton = document.getElementById('deleteButton');
-        deleteButton.href = "{{ route('deleteimage.dokumentasigizi') }}?name=" + imageName;
+        deleteButton.href = "{{ route('deleteimage.dokumentasikesling') }}?name=" + imageName;
 
         // Store the current image name for later use
         currentImageName = imageName;

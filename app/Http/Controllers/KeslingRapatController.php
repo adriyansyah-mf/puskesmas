@@ -6,12 +6,15 @@ use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image as ImageManagerStatic;
 use Illuminate\Support\Str;
 
-class GiziRapatController extends Controller
+class KeslingRapatController extends Controller
 {
     public function index(){
+        
 
+
+        
         // $images = DB::table('images')->where('type', 'lokmun')->get();
-        $images = Image::where('type', 'dokumentasi_rapat_gizi')->orderBy('created_at', 'desc')->paginate(9);
+        $images = Image::where('type', 'dokumentasi_rapat_kesling')->orderBy('created_at', 'desc')->paginate(9);
 
         // limit title in images
         foreach ($images as $image) {
@@ -19,9 +22,9 @@ class GiziRapatController extends Controller
         }
 
       
-        return view('gizi_rapat.dokumentasi',[
-            "title" => "gizi",
-            "path" => "dokumentasi_rapat_gizi",
+        return view('kesling_rapat.dokumentasi',[
+            "title" => "kesling",
+            "path" => "dokumentasi_rapat_kesling",
             "images" => $images
         ]);
     }
@@ -62,15 +65,15 @@ class GiziRapatController extends Controller
         // Retrieve the specific image by name and type
 
         // Retrieve all 'lokmun_notulen' images
-        $images = Image::where('type', 'dokumentasi_rapat_gizi')->get();
+        $images = Image::where('type', 'dokumentasi_rapat_kesling')->get();
 
         return view('lokmun.notulen', [
             'images' => $images,
-            'path' => "dokumentasi_rapat_gizi" // Pass the title of the specific image
+            'path' => "dokumentasi_rapat_kesling" // Pass the title of the specific image
         ]);
     }
 
-    public function deleteImageDokumentasiGizi(Request $request)
+    public function deleteImageDokumentasiKesling(Request $request)
         {
             // Get the image name from the request
             $imageName = $request->input('name');
@@ -107,7 +110,7 @@ class GiziRapatController extends Controller
             Image::create([
                 'name' => $imageName,
                 'title' => $request->title,
-                'type' => 'notulen_rapat_gizi'
+                'type' => 'notulen_rapat_kesling'
             ]);
     
             return back();
@@ -122,7 +125,7 @@ class GiziRapatController extends Controller
     public function IndexNotulen(){
 
             // $images = DB::table('images')->where('type', 'lokmun')->get();
-            $images = Image::where('type', 'notulen_rapat_gizi')->orderBy('created_at', 'desc')->paginate(9);
+            $images = Image::where('type', 'notulen_rapat_kesling')->orderBy('created_at', 'desc')->paginate(9);
     
             // limit title in images
             foreach ($images as $image) {
@@ -130,14 +133,14 @@ class GiziRapatController extends Controller
             }
     
           
-            return view('gizi_rapat.notulen',[
-                "title" => "gizi",
-                "path" => "notulen_rapat_gizi",
+            return view('kesling_rapat.notulen',[
+                "title" => "kesling",
+                "path" => "notulen_rapat_kesling",
                 "images" => $images
             ]);
         }
 
-        public function deleteImageNotulenGizi(Request $request)
+        public function deleteImageNotulenKesling(Request $request)
         {
             // Get the image name from the request
             $imageName = $request->input('name');
@@ -155,10 +158,10 @@ class GiziRapatController extends Controller
             return back();
         }
 
-        public function IndexUndangan(){
+        public function IndexUndangan($prog){
 
             // $images = DB::table('images')->where('type', 'lokmun')->get();
-            $images = Image::where('type', 'undangan_rapat_gizi')->orderBy('created_at', 'desc')->paginate(9);
+            $images = Image::where('type', 'undangan_rapat_kesling')->orderBy('created_at', 'desc')->paginate(9);
     
             // limit title in images
             foreach ($images as $image) {
@@ -166,9 +169,9 @@ class GiziRapatController extends Controller
             }
     
           
-            return view('gizi_rapat.undangan',[
-                "title" => "gizi",
-                "path" => "undangan_rapat_gizi",
+            return view('kesling_rapat.undangan',[
+                "title" => "$prog",
+                "path" => "undangan_rapat_kesling",
                 "images" => $images
             ]);
         }
@@ -192,7 +195,7 @@ class GiziRapatController extends Controller
             Image::create([
                 'name' => $imageName,
                 'title' => $request->title,
-                'type' => 'undangan_rapat_gizi'
+                'type' => 'undangan_rapat_kesling'
             ]);
     
             return back();
@@ -204,7 +207,7 @@ class GiziRapatController extends Controller
             }
         }
 
-        public function deleteImageUndanganGizi(Request $request)
+        public function deleteImageUndanganKesling(Request $request)
         {
             // Get the image name from the request
             $imageName = $request->input('name');

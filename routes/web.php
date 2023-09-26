@@ -13,6 +13,7 @@ use App\Http\Controllers\LaporanKinerjaController;
 use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\LokmunNotulenController;
 use App\Http\Controllers\GiziRapatController;
+use App\Http\Controllers\keslingRapatController;
 use App\Http\Controllers\RescheduleController;
 use App\Models\Jadwal;
 use App\Models\Reschedule;
@@ -106,23 +107,45 @@ Route::delete('lokmun/delete', [LokmunNotulenController::class, 'deleteImage'])-
 
 
 // gizi rapat
-Route::get('rapat/{prog}/dokumentasi', [GiziRapatController::class, 'index'])->middleware('auth');
+Route::get('rapat/gizi/dokumentasi', [GiziRapatController::class, 'index'])->middleware('auth');
 
 Route::post('/image-upload/gizi/dokumentasi', [GiziRapatController::class, 'uploadImage'])->name('uploadimage.dokumentasigizi')->middleware('auth');
 
 Route::delete('rapat/gizi/dokumentasi/delete', [GiziRapatController::class, 'deleteImageDokumentasiGizi'])->name('deleteimage.dokumentasigizi')->middleware('auth');
 
-Route::get('rapat/{prog}/notulen', [GiziRapatController::class, 'IndexNotulen'])->name('indexnotulengizi')->middleware('auth');
+Route::get('rapat/gizi/notulen', [GiziRapatController::class, 'IndexNotulen'])->name('indexnotulengizi')->middleware('auth');
 
 Route::post('/image-upload/gizi/notulen', [GiziRapatController::class, 'uploadImageNotulenRapat'])->name('uploadimage.notulengizi')->middleware('auth');
 
 Route::delete('rapat/gizi/notulen/delete', [GiziRapatController::class, 'deleteImageNotulenGizi'])->name('deleteimage.notulengizi')->middleware('auth');
 
-Route::get('rapat/{prog}/undangan', [GiziRapatController::class, 'IndexUndangan'])->middleware('auth');
+Route::get('rapat/gizi/undangan', [GiziRapatController::class, 'IndexUndangan'])->middleware('auth');
 
 Route::post('/image-upload/gizi/undangan', [GiziRapatController::class, 'uploadImagUndanganRapat'])->name('uploadimage.undangan')->middleware('auth');
 
 Route::delete('rapat/gizi/undangan/delete', [GiziRapatController::class, 'deleteImageUndanganGizi'])->name('deleteimage.undangan')->middleware('auth');
+
+
+
+
+// kesling rapat
+Route::get('rapat/kesling/dokumentasi', [KeslingRapatController::class, 'index'])->middleware('auth')->name('KeslingDokumentasi');
+
+Route::post('/image-upload/kesling/dokumentasi', [KeslingRapatController::class, 'uploadImage'])->name('uploadimage.dokumentasikesling')->middleware('auth');
+
+Route::delete('rapat/kesling/dokumentasi/delete', [KeslingRapatController::class, 'deleteImageDokumentasiKesling'])->name('deleteimage.dokumentasikesling')->middleware('auth');
+
+Route::get('rapat/kesling/notulen', [KeslingRapatController::class, 'IndexNotulen'])->name('indexnotulenkesling')->middleware('auth');
+
+Route::post('/image-upload/kesling/notulen', [KeslingRapatController::class, 'uploadImageNotulenRapat'])->name('uploadimage.notulenkesling')->middleware('auth');
+
+Route::delete('rapat/kesling/notulen/delete', [KeslingRapatController::class, 'deleteImageNotulenKesling'])->name('deleteimage.notulenkesling')->middleware('auth');
+
+Route::get('rapat/kesling/undangan', [KeslingRapatController::class, 'IndexUndanganKesling'])->middleware('auth');
+
+Route::post('/image-upload/kesling/undangan', [KeslingRapatController::class, 'uploadImagUndanganRapat'])->name('uploadimage.undangankesling')->middleware('auth');
+
+Route::delete('rapat/kesling/undangan/delete', [KeslingRapatController::class, 'deleteImageUndanganKesling'])->name('deleteimage.undangankesling')->middleware('auth');
 
 
 // load image
