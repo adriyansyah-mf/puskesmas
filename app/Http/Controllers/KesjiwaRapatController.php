@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image as ImageManagerStatic;
 use Illuminate\Support\Str;
 
-class KeslingRapatController extends Controller
+class KesjiwaRapatController extends Controller
 {
     public function index(){
         
@@ -14,7 +14,7 @@ class KeslingRapatController extends Controller
 
         
         // $images = DB::table('images')->where('type', 'lokmun')->get();
-        $images = Image::where('type', 'dokumentasi_rapat_kesling')->orderBy('created_at', 'desc')->paginate(9);
+        $images = Image::where('type', 'dokumentasi_rapat_kesjiwa')->orderBy('created_at', 'desc')->paginate(9);
 
         // limit title in images
         foreach ($images as $image) {
@@ -22,9 +22,9 @@ class KeslingRapatController extends Controller
         }
 
       
-        return view('kesling_rapat.dokumentasi',[
-            "title" => "kesling",
-            "path" => "dokumentasi_rapat_kesling",
+        return view('kesjiwa_rapat.dokumentasi',[
+            "title" => "kesjiwa",
+            "path" => "dokumentasi_rapat_kesjiwa",
             "images" => $images
         ]);
     }
@@ -65,15 +65,15 @@ class KeslingRapatController extends Controller
         // Retrieve the specific image by name and type
 
         // Retrieve all 'lokmun_notulen' images
-        $images = Image::where('type', 'dokumentasi_rapat_kesling')->get();
+        $images = Image::where('type', 'dokumentasi_rapat_kesjiwa')->get();
 
         return view('lokmun.notulen', [
             'images' => $images,
-            'path' => "dokumentasi_rapat_kesling" // Pass the title of the specific image
+            'path' => "dokumentasi_rapat_kesjiwa" // Pass the title of the specific image
         ]);
     }
 
-    public function deleteImageDokumentasiKesling(Request $request)
+    public function deleteImageDokumentasiKesjiwa(Request $request)
         {
             // Get the image name from the request
             $imageName = $request->input('name');
@@ -110,7 +110,7 @@ class KeslingRapatController extends Controller
             Image::create([
                 'name' => $imageName,
                 'title' => $request->title,
-                'type' => 'notulen_rapat_kesling'
+                'type' => 'notulen_rapat_kesjiwa'
             ]);
     
             return back();
@@ -125,7 +125,7 @@ class KeslingRapatController extends Controller
     public function IndexNotulen(){
 
             // $images = DB::table('images')->where('type', 'lokmun')->get();
-            $images = Image::where('type', 'notulen_rapat_kesling')->orderBy('created_at', 'desc')->paginate(9);
+            $images = Image::where('type', 'notulen_rapat_kesjiwa')->orderBy('created_at', 'desc')->paginate(9);
     
             // limit title in images
             foreach ($images as $image) {
@@ -133,14 +133,14 @@ class KeslingRapatController extends Controller
             }
     
           
-            return view('kesling_rapat.notulen',[
-                "title" => "kesling",
-                "path" => "notulen_rapat_kesling",
+            return view('kesjiwa_rapat.notulen',[
+                "title" => "kesjiwa",
+                "path" => "notulen_rapat_kesjiwa",
                 "images" => $images
             ]);
         }
 
-        public function deleteImageNotulenKesling(Request $request)
+        public function deleteImageNotulenKesjiwa(Request $request)
         {
             // Get the image name from the request
             $imageName = $request->input('name');
@@ -152,7 +152,7 @@ class KeslingRapatController extends Controller
                 // Delete the image from the database and storage
                 $image->delete();
                 // You may want to delete the actual file from storage here as well
-                Storage::delete('uploads/lokmun/' . $imageName);
+
             }
     
             return back();
@@ -161,7 +161,7 @@ class KeslingRapatController extends Controller
         public function IndexUndangan(){
 
             // $images = DB::table('images')->where('type', 'lokmun')->get();
-            $images = Image::where('type', 'undangan_rapat_kesling')->orderBy('created_at', 'desc')->paginate(9);
+            $images = Image::where('type', 'undangan_rapat_kesjiwa')->orderBy('created_at', 'desc')->paginate(9);
     
             // limit title in images
             foreach ($images as $image) {
@@ -169,9 +169,9 @@ class KeslingRapatController extends Controller
             }
     
           
-            return view('kesling_rapat.undangan',[
-                "title" => "kesling",
-                "path" => "undangan_rapat_kesling",
+            return view('perkesmas_rapat.undangan',[
+                "title" => "kesjiwa",
+                "path" => "undangan_rapat_kesjiwa",
                 "images" => $images
             ]);
         
@@ -196,7 +196,7 @@ class KeslingRapatController extends Controller
             Image::create([
                 'name' => $imageName,
                 'title' => $request->title,
-                'type' => 'undangan_rapat_kesling'
+                'type' => 'undangan_rapat_kesjiwa'
             ]);
     
             return back();
@@ -208,7 +208,7 @@ class KeslingRapatController extends Controller
             }
         }
 
-        public function deleteImageUndanganKesling(Request $request)
+        public function deleteImageUndanganKesjiwa(Request $request)
         {
             // Get the image name from the request
             $imageName = $request->input('name');
@@ -220,7 +220,6 @@ class KeslingRapatController extends Controller
                 // Delete the image from the database and storage
                 $image->delete();
                 // You may want to delete the actual file from storage here as well
-                Storage::delete('uploads/lokmun/' . $imageName);
             }
     
             return back();

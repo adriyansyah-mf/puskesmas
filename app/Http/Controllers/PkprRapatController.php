@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image as ImageManagerStatic;
 use Illuminate\Support\Str;
 
-class KeslingRapatController extends Controller
+class PkprRapatController extends Controller
 {
     public function index(){
         
@@ -14,7 +14,7 @@ class KeslingRapatController extends Controller
 
         
         // $images = DB::table('images')->where('type', 'lokmun')->get();
-        $images = Image::where('type', 'dokumentasi_rapat_kesling')->orderBy('created_at', 'desc')->paginate(9);
+        $images = Image::where('type', 'dokumentasi_rapat_pkpr')->orderBy('created_at', 'desc')->paginate(9);
 
         // limit title in images
         foreach ($images as $image) {
@@ -22,9 +22,9 @@ class KeslingRapatController extends Controller
         }
 
       
-        return view('kesling_rapat.dokumentasi',[
-            "title" => "kesling",
-            "path" => "dokumentasi_rapat_kesling",
+        return view('pkpr_rapat.dokumentasi',[
+            "title" => "pkpr",
+            "path" => "dokumentasi_rapat_pkpr",
             "images" => $images
         ]);
     }
@@ -65,15 +65,15 @@ class KeslingRapatController extends Controller
         // Retrieve the specific image by name and type
 
         // Retrieve all 'lokmun_notulen' images
-        $images = Image::where('type', 'dokumentasi_rapat_kesling')->get();
+        $images = Image::where('type', 'dokumentasi_rapat_pkpr')->get();
 
         return view('lokmun.notulen', [
             'images' => $images,
-            'path' => "dokumentasi_rapat_kesling" // Pass the title of the specific image
+            'path' => "dokumentasi_rapat_pkpr" // Pass the title of the specific image
         ]);
     }
 
-    public function deleteImageDokumentasiKesling(Request $request)
+    public function deleteImageDokumentasiPkpr(Request $request)
         {
             // Get the image name from the request
             $imageName = $request->input('name');
@@ -85,7 +85,7 @@ class KeslingRapatController extends Controller
                 // Delete the image from the database and storage
                 $image->delete();
                 // You may want to delete the actual file from storage here as well
-                Storage::delete('uploads/lokmun/' . $imageName);
+            
             }
     
             return back();
@@ -110,7 +110,7 @@ class KeslingRapatController extends Controller
             Image::create([
                 'name' => $imageName,
                 'title' => $request->title,
-                'type' => 'notulen_rapat_kesling'
+                'type' => 'notulen_rapat_pkpr'
             ]);
     
             return back();
@@ -125,7 +125,7 @@ class KeslingRapatController extends Controller
     public function IndexNotulen(){
 
             // $images = DB::table('images')->where('type', 'lokmun')->get();
-            $images = Image::where('type', 'notulen_rapat_kesling')->orderBy('created_at', 'desc')->paginate(9);
+            $images = Image::where('type', 'notulen_rapat_pkpr')->orderBy('created_at', 'desc')->paginate(9);
     
             // limit title in images
             foreach ($images as $image) {
@@ -133,14 +133,14 @@ class KeslingRapatController extends Controller
             }
     
           
-            return view('kesling_rapat.notulen',[
-                "title" => "kesling",
-                "path" => "notulen_rapat_kesling",
+            return view('pkpr_rapat.notulen',[
+                "title" => "pkpr",
+                "path" => "notulen_rapat_pkpr",
                 "images" => $images
             ]);
         }
 
-        public function deleteImageNotulenKesling(Request $request)
+        public function deleteImageNotulenPkpr(Request $request)
         {
             // Get the image name from the request
             $imageName = $request->input('name');
@@ -152,7 +152,7 @@ class KeslingRapatController extends Controller
                 // Delete the image from the database and storage
                 $image->delete();
                 // You may want to delete the actual file from storage here as well
-                Storage::delete('uploads/lokmun/' . $imageName);
+
             }
     
             return back();
@@ -161,7 +161,7 @@ class KeslingRapatController extends Controller
         public function IndexUndangan(){
 
             // $images = DB::table('images')->where('type', 'lokmun')->get();
-            $images = Image::where('type', 'undangan_rapat_kesling')->orderBy('created_at', 'desc')->paginate(9);
+            $images = Image::where('type', 'undangan_rapat_pkpr')->orderBy('created_at', 'desc')->paginate(9);
     
             // limit title in images
             foreach ($images as $image) {
@@ -169,12 +169,11 @@ class KeslingRapatController extends Controller
             }
     
           
-            return view('kesling_rapat.undangan',[
-                "title" => "kesling",
-                "path" => "undangan_rapat_kesling",
+            return view('pkpr_rapat.undangan',[
+                "title" => "pkpr",
+                "path" => "undangan_rapat_pkpr",
                 "images" => $images
             ]);
-        
         }
 
         public function uploadImagUndanganRapat(Request $request){
@@ -196,7 +195,7 @@ class KeslingRapatController extends Controller
             Image::create([
                 'name' => $imageName,
                 'title' => $request->title,
-                'type' => 'undangan_rapat_kesling'
+                'type' => 'undangan_rapat_pkpr'
             ]);
     
             return back();
@@ -208,7 +207,7 @@ class KeslingRapatController extends Controller
             }
         }
 
-        public function deleteImageUndanganKesling(Request $request)
+        public function deleteImageUndanganPkpr(Request $request)
         {
             // Get the image name from the request
             $imageName = $request->input('name');
@@ -220,7 +219,6 @@ class KeslingRapatController extends Controller
                 // Delete the image from the database and storage
                 $image->delete();
                 // You may want to delete the actual file from storage here as well
-                Storage::delete('uploads/lokmun/' . $imageName);
             }
     
             return back();

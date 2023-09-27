@@ -592,7 +592,7 @@
                                                         aria-expanded="false">Lokmun Linprok Linsek</a>
                 
                                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                                        <li><a class="dropdown-item" href="lokmun/kesjiwa">Notulen</a></li>
+                                                        <li><a class="dropdown-item" href="lokmun/kesjiwa_lokmun_notulen/kesjiwa">Notulen</a></li>
                                                     </ul>
                                                 </li>
                                                 <li class="dropdown dropdown-submenu dropright">
@@ -601,9 +601,9 @@
                                                         aria-expanded="false">Rapat Internal</a>
                 
                                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                                        <li><a class="dropdown-item" href="index.html">Dokumentasi</a></li>
-                                                        <li><a class="dropdown-item" href="index.html">Notulen</a></li>
-                                                        <li><a class="dropdown-item" href="index.html">Undangan</a></li>
+                                                        <li><a class="dropdown-item" href="{{route('KesjiwaDokumentasi')}}">Dokumentasi</a></li>
+                                                        <li><a class="dropdown-item" href="rapat/kesjiwa/notulen">Notulen</a></li>
+                                                        <li><a class="dropdown-item" href="rapat/kesjiwa/undangan">Undangan</a></li>
                                                     </ul>
                                                 </li>
                                             </ul>
@@ -657,7 +657,7 @@
                                                         aria-expanded="false">Lokmun Linprok Linsek</a>
                 
                                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                                        <li><a class="dropdown-item" href="lokmun/pkpr">Notulen</a></li>
+                                                        <li><a class="dropdown-item" href="lokmun/pkpr_lokmun_notulen/pkpr">Notulen</a></li>
                                                     </ul>
                                                 </li>
                                                 <li class="dropdown dropdown-submenu dropright">
@@ -666,9 +666,9 @@
                                                         aria-expanded="false">Rapat Internal</a>
                 
                                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                                        <li><a class="dropdown-item" href="index.html">Dokumentasi</a></li>
-                                                        <li><a class="dropdown-item" href="index.html">Notulen</a></li>
-                                                        <li><a class="dropdown-item" href="index.html">Undangan</a></li>
+                                                        <li><a class="dropdown-item" href="{{route('PkprDokumentasi')}}">Dokumentasi</a></li>
+                                                        <li><a class="dropdown-item" href="rapat/pkpr/notulen">Notulen</a></li>
+                                                        <li><a class="dropdown-item" href="rapat/pkpr/undangan">Undangan</a></li>
                                                     </ul>
                                                 </li>
                                             </ul>
