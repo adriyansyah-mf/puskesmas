@@ -147,7 +147,7 @@ Route::post('/image-upload/kesling/notulen', [KeslingRapatController::class, 'up
 
 Route::delete('rapat/kesling/notulen/delete', [KeslingRapatController::class, 'deleteImageNotulenKesling'])->name('deleteimage.notulenkesling')->middleware('auth');
 
-Route::get('rapat/kesling/undangan', [KeslingRapatController::class, 'IndexUndangan'])->middleware('auth');
+Route::get('rapat/kesling/undangan', [KeslingRapatController::class, 'IndexUndangan'])->middleware('auth')->name('indexUndanganKesling');
 
 Route::post('/image-upload/kesling/undangan', [KeslingRapatController::class, 'uploadImagUndanganRapat'])->name('uploadimage.undangankesling')->middleware('auth');
 
@@ -168,7 +168,7 @@ Route::post('/image-upload/kia/notulen', [KiaRapatController::class, 'uploadImag
 
 Route::delete('rapat/kia/notulen/delete', [KiagRapatController::class, 'deleteImageNotulenKia'])->name('deleteimage.notulenkia')->middleware('auth');
 
-Route::get('rapat/kia/undangan', [KiaRapatController::class, 'IndexUndangan'])->middleware('auth');
+Route::get('rapat/kia/undangan', [KiaRapatController::class, 'IndexUndangan'])->middleware('auth')->name('indexUndanganKia');
 
 Route::post('/image-upload/kia/undangan', [KiaRapatController::class, 'uploadImagUndanganRapat'])->name('uploadimage.undangankia')->middleware('auth');
 
@@ -189,7 +189,7 @@ Route::post('/image-upload/p2p/notulen', [P2pRapatController::class, 'uploadImag
 
 Route::delete('rapat/p2p/notulen/delete', [P2pRapatController::class, 'deleteImageNotulenP2p'])->name('deleteimage.notulenp2p')->middleware('auth');
 
-Route::get('rapat/p2p/undangan', [P2pRapatController::class, 'IndexUndangan'])->middleware('auth');
+Route::get('rapat/p2p/undangan', [P2pRapatController::class, 'IndexUndangan'])->middleware('auth')->name('indexUndanganp2p');
 
 Route::post('/image-upload/p2p/undangan', [P2pRapatController::class, 'uploadImagUndanganRapat'])->name('uploadimage.undanganp2p')->middleware('auth');
 
@@ -209,7 +209,7 @@ Route::post('/image-upload/perkesmas/notulen', [PerkesmasRapatController::class,
 
 Route::delete('rapat/perkesmas/notulen/delete', [PerkesmasRapatController::class, 'deleteImageNotulenPerkesmas'])->name('deleteimage.notulenperkesmas')->middleware('auth');
 
-Route::get('rapat/perkesmas/undangan', [PerkesmasRapatController::class, 'IndexUndangan'])->middleware('auth');
+Route::get('rapat/perkesmas/undangan', [PerkesmasRapatController::class, 'IndexUndangan'])->middleware('auth')->name('indexUndanganPerkesmas');
 
 Route::post('/image-upload/perkesmas/undangan', [PerkesmasRapatController::class, 'uploadImagUndanganRapat'])->name('uploadimage.undanganperkesmas')->middleware('auth');
 
@@ -229,7 +229,7 @@ Route::post('/image-upload/promkes/notulen', [PromkesRapatController::class, 'up
 
 Route::delete('rapat/promkes/notulen/delete', [PromkesRapatController::class, 'deleteImageNotulenpromkes'])->name('deleteimage.notulenpromkes')->middleware('auth');
 
-Route::get('rapat/promkes/undangan', [PromkesRapatController::class, 'IndexUndangan'])->middleware('auth');
+Route::get('rapat/promkes/undangan', [PromkesRapatController::class, 'IndexUndangan'])->middleware('auth')->name('indexUndanganPromkes');
 
 Route::post('/image-upload/promkes/undangan', [PromkesRapatController::class, 'uploadImagUndanganRapat'])->name('uploadimage.undanganpromkes')->middleware('auth');
 
@@ -251,7 +251,7 @@ Route::post('/image-upload/kesjiwa/notulen', [KesjiwaRapatController::class, 'up
 
 Route::delete('rapat/kesjiwa/notulen/delete', [KesjiwaRapatController::class, 'deleteImageNotulenkesjiwa'])->name('deleteimage.notulenkesjiwa')->middleware('auth');
 
-Route::get('rapat/kesjiwa/undangan', [KesjiwaRapatController::class, 'IndexUndangan'])->middleware('auth');
+Route::get('rapat/kesjiwa/undangan', [KesjiwaRapatController::class, 'IndexUndangan'])->middleware('auth')->name('indexUndangankesjiwa');
 
 Route::post('/image-upload/kesjiwa/undangan', [KesjiwaRapatController::class, 'uploadImagUndanganRapat'])->name('uploadimage.undangankesjiwa')->middleware('auth');
 
@@ -272,7 +272,7 @@ Route::post('/image-upload/pkpr/notulen', [PkprRapatController::class, 'uploadIm
 
 Route::delete('rapat/pkpr/notulen/delete', [PkprRapatController::class, 'deleteImageNotulenpkpr'])->name('deleteimage.notulenpkpr')->middleware('auth');
 
-Route::get('rapat/pkpr/undangan', [PkprRapatController::class, 'IndexUndangan'])->middleware('auth');
+Route::get('rapat/pkpr/undangan', [PkprRapatController::class, 'IndexUndangan'])->middleware('auth')->name('indexundanganpkpr');
 
 Route::post('/image-upload/pkpr/undangan', [PkprRapatController::class, 'uploadImagUndanganRapat'])->name('uploadimage.undanganpkpr')->middleware('auth');
 

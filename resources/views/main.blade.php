@@ -277,8 +277,8 @@
                 
                                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                                         <li><a class="dropdown-item" href="{{route('KeslingDokumentasi')}}">Dokumentasi</a></li>
-                                                        <li><a class="dropdown-item" href="rapat/kesling/notulen">Notulen</a></li>
-                                                        <li><a class="dropdown-item" href="rapat/kesling/undangan">Undangan</a></li>
+                                                        <li><a class="dropdown-item" href="{{route('indexnotulenkesling')}}">Notulen</a></li>
+                                                        <li><a class="dropdown-item" href="{{route('indexUndanganKesling')}}">Undangan</a></li>
                                                     </ul>
                                                 </li>
                                             </ul>
@@ -342,8 +342,8 @@
                 
                                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                                         <li><a class="dropdown-item" href="{{route('KiaDokumentasi')}}">Dokumentasi</a></li>
-                                                        <li><a class="dropdown-item" href="rapat/kia/notulen">Notulen</a></li>
-                                                        <li><a class="dropdown-item" href="rapat/kia/undangan">Undangan</a></li>
+                                                        <li><a class="dropdown-item" href="{{route('indexnotulenkia')}}">Notulen</a></li>
+                                                        <li><a class="dropdown-item" href="{{route('indexUndanganKia')}}">Undangan</a></li>
                                                     </ul>
                                                 </li>
                                             </ul>
@@ -407,8 +407,8 @@
                 
                                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                                         <li><a class="dropdown-item" href="{{route('P2pDokumentasi')}}">Dokumentasi</a></li>
-                                                        <li><a class="dropdown-item" href="rapat/p2p/notulen">Notulen</a></li>
-                                                        <li><a class="dropdown-item" href="rapat/p2p/undangan">Undangan</a></li>
+                                                        <li><a class="dropdown-item" href="{{route('indexnotulenp2p')}}">Notulen</a></li>
+                                                        <li><a class="dropdown-item" href="{{route('indexUndanganp2p')}}">Undangan</a></li>
                                                     </ul>
                                                 </li>
                                             </ul>
@@ -472,8 +472,8 @@
                 
                                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                                         <li><a class="dropdown-item" href="{{route('PerkesmasDokumentasi')}}">Dokumentasi</a></li>
-                                                        <li><a class="dropdown-item" href="rapat/perkesmas/notulen">Notulen</a></li>
-                                                        <li><a class="dropdown-item" href="rapat/perkesmas/undangan">Undangan</a></li>
+                                                        <li><a class="dropdown-item" href="{{route('indexnotulenperkesmas')}}">Notulen</a></li>
+                                                        <li><a class="dropdown-item" href="{{route('indexUndanganPerkesmas')}}">Undangan</a></li>
                                                     </ul>
                                                 </li>
                                             </ul>
@@ -537,8 +537,8 @@
                 
                                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                                         <li><a class="dropdown-item" href="{{route('PromkesDokumentasi')}}">Dokumentasi</a></li>
-                                                        <li><a class="dropdown-item" href="rapat/promkes/notulen">Notulen</a></li>
-                                                        <li><a class="dropdown-item" href="rapat/promkes/undangan">Undangan</a></li>
+                                                        <li><a class="dropdown-item" href="{{route('indexnotulenpromkes')}}">Notulen</a></li>
+                                                        <li><a class="dropdown-item" href="{{route('indexUndanganPromkes')}}">Undangan</a></li>
                                                   
                                                     </ul>
                                                 </li>
@@ -618,8 +618,8 @@
                 
                                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                                         <li><a class="dropdown-item" href="{{route('KesjiwaDokumentasi')}}">Dokumentasi</a></li>
-                                                        <li><a class="dropdown-item" href="rapat/kesjiwa/notulen">Notulen</a></li>
-                                                        <li><a class="dropdown-item" href="rapat/kesjiwa/undangan">Undangan</a></li>
+                                                        <li><a class="dropdown-item" href="{{route('indexnotulenkesjiwa')}}">Notulen</a></li>
+                                                        <li><a class="dropdown-item" href="{{route('indexUndangankesjiwa')}}">Undangan</a></li>
                                                     </ul>
                                                 </li>
                                             </ul>
@@ -683,8 +683,8 @@
                 
                                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                                         <li><a class="dropdown-item" href="{{route('PkprDokumentasi')}}">Dokumentasi</a></li>
-                                                        <li><a class="dropdown-item" href="rapat/pkpr/notulen">Notulen</a></li>
-                                                        <li><a class="dropdown-item" href="rapat/pkpr/undangan">Undangan</a></li>
+                                                        <li><a class="dropdown-item" href="{{route('indexnotulenpkpr')}}">Notulen</a></li>
+                                                        <li><a class="dropdown-item" href="{{route('indexundanganpkpr')}}">Undangan</a></li>
                                                     </ul>
                                                 </li>
                                             </ul>
