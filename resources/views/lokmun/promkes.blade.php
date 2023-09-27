@@ -14,21 +14,6 @@
 
 
 <meta name="csrf-token" content="{{ csrf_token() }}">
-<!--Page Title-->
-<section class="page-title text-center" style="background-image:url(images/background/3.jpg);">
-    <div class="container">
-        <div class="title-text">
-            <h1>{{ $title }}</h1>
-            <ul class="title-menu clearfix">
-                <li>
-                    <a href="index.html">home &nbsp;/</a>
-                </li>
-                <li>{{ $path }}</li>
-            </ul>
-        </div>
-    </div>
-</section>
-<!--End Page Title-->
 
  <!--Page Title-->
  <section class="page-title text-center" style="background-image:url('{{ asset('images/background/3.jpg') }}')">
