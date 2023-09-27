@@ -5,14 +5,16 @@ use App\Models\Image;
 use Illuminate\Http\Request;
 use Intervention\Image\Facades\Image as ImageManagerStatic;
 use Illuminate\Support\Str;
-use Illuminate\Support\Facades\Storage;
 
-class GiziRapatController extends Controller
+class P2pRapatController extends Controller
 {
     public function index(){
+        
 
+
+        
         // $images = DB::table('images')->where('type', 'lokmun')->get();
-        $images = Image::where('type', 'dokumentasi_rapat_gizi')->orderBy('created_at', 'desc')->paginate(9);
+        $images = Image::where('type', 'dokumentasi_rapat_p2p')->orderBy('created_at', 'desc')->paginate(9);
 
         // limit title in images
         foreach ($images as $image) {
@@ -20,9 +22,9 @@ class GiziRapatController extends Controller
         }
 
       
-        return view('gizi_rapat.dokumentasi',[
-            "title" => "gizi",
-            "path" => "dokumentasi_rapat_gizi",
+        return view('p2p_rapat.dokumentasi',[
+            "title" => "p2p",
+            "path" => "dokumentasi_rapat_p2p",
             "images" => $images
         ]);
     }
@@ -63,22 +65,17 @@ class GiziRapatController extends Controller
         // Retrieve the specific image by name and type
 
         // Retrieve all 'lokmun_notulen' images
-        $images = Image::where('type', 'dokumentasi_rapat_gizi')->get();
+        $images = Image::where('type', 'dokumentasi_rapat_p2p')->get();
 
         return view('lokmun.notulen', [
             'images' => $images,
-            'path' => "dokumentasi_rapat_gizi" // Pass the title of the specific image
+            'path' => "dokumentasi_rapat_p2p" // Pass the title of the specific image
         ]);
     }
 
-    public function deleteImageDokumentasiGizi(Request $request)
+    public function deleteImageDokumentasiP2p(Request $request)
         {
             // Get the image name from the request
-$request->validate([
-        'name' => 'required|string', // You can adjust the validation rules as needed
-    ]);
-
-
             $imageName = $request->input('name');
 
             // Find the image by name and delete it
@@ -88,8 +85,7 @@ $request->validate([
                 // Delete the image from the database and storage
                 $image->delete();
                 // You may want to delete the actual file from storage here as well
-               
-               
+
             }
     
             return back();
@@ -114,7 +110,7 @@ $request->validate([
             Image::create([
                 'name' => $imageName,
                 'title' => $request->title,
-                'type' => 'notulen_rapat_gizi'
+                'type' => 'notulen_rapat_p2p'
             ]);
     
             return back();
@@ -129,7 +125,7 @@ $request->validate([
     public function IndexNotulen(){
 
             // $images = DB::table('images')->where('type', 'lokmun')->get();
-            $images = Image::where('type', 'notulen_rapat_gizi')->orderBy('created_at', 'desc')->paginate(9);
+            $images = Image::where('type', 'notulen_rapat_p2p')->orderBy('created_at', 'desc')->paginate(9);
     
             // limit title in images
             foreach ($images as $image) {
@@ -137,14 +133,14 @@ $request->validate([
             }
     
           
-            return view('gizi_rapat.notulen',[
-                "title" => "gizi",
-                "path" => "notulen_rapat_gizi",
+            return view('p2p_rapat.notulen',[
+                "title" => "p2p",
+                "path" => "notulen_rapat_p2p",
                 "images" => $images
             ]);
         }
 
-        public function deleteImageNotulenGizi(Request $request)
+        public function deleteImageNotulenP2p(Request $request)
         {
             // Get the image name from the request
             $imageName = $request->input('name');
@@ -165,7 +161,7 @@ $request->validate([
         public function IndexUndangan(){
 
             // $images = DB::table('images')->where('type', 'lokmun')->get();
-            $images = Image::where('type', 'undangan_rapat_gizi')->orderBy('created_at', 'desc')->paginate(9);
+            $images = Image::where('type', 'undangan_rapat_p2p')->orderBy('created_at', 'desc')->paginate(9);
     
             // limit title in images
             foreach ($images as $image) {
@@ -173,9 +169,9 @@ $request->validate([
             }
     
           
-            return view('gizi_rapat.undangan',[
-                "title" => "gizi",
-                "path" => "undangan_rapat_gizi",
+            return view('p2p_rapat.undangan',[
+                "title" => "p2p",
+                "path" => "undangan_rapat_p2p",
                 "images" => $images
             ]);
         }
@@ -199,7 +195,7 @@ $request->validate([
             Image::create([
                 'name' => $imageName,
                 'title' => $request->title,
-                'type' => 'undangan_rapat_gizi'
+                'type' => 'undangan_rapat_p2p'
             ]);
     
             return back();
@@ -211,7 +207,7 @@ $request->validate([
             }
         }
 
-        public function deleteImageUndanganGizi(Request $request)
+        public function deleteImageUndanganP2p(Request $request)
         {
             // Get the image name from the request
             $imageName = $request->input('name');
@@ -223,7 +219,6 @@ $request->validate([
                 // Delete the image from the database and storage
                 $image->delete();
                 // You may want to delete the actual file from storage here as well
-
             }
     
             return back();

@@ -96,6 +96,7 @@ class LokmunNotulenController extends Controller
 
         public function deleteImage(Request $request)
         {
+
             // Get the image name from the request
             $imageName = $request->input('name');
 
@@ -106,7 +107,6 @@ class LokmunNotulenController extends Controller
                 // Delete the image from the database and storage
                 $image->delete();
                 // You may want to delete the actual file from storage here as well
-                Storage::delete('uploads/lokmun/' . $imageName);
             }
     
             return back();

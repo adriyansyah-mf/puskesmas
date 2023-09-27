@@ -190,8 +190,6 @@
                             console.error(error);
                         },
                     });
-
-                    location.reload();
                 }
             });
         }

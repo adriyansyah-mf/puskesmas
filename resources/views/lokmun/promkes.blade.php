@@ -27,10 +27,10 @@
                 </a>
             </div>
             <div class="row">
-                @foreach ($images as $image)
+                @foreach ($images->where('type', 'promkes_lokmun_notulen') as $image)
                 <div class="col-md-4 mb-4">
                     <div class="card">
-                        <img src="{{ asset('storage/uploads/notulen/' . $image->name) }}" class="card-img-top" alt="{{ $image->title }}">
+                        <img src="{{ asset('storage/uploads/lokmun/' . $image->name) }}" class="card-img-top" alt="{{ $image->title }}">
                         <div class="card-body">
                             <h5 class="card-title">
                                 <a href="#" data-toggle="modal" data-target="#imageModal" data-image-name="{{ $image->name }}" data-image-title="{{ $image->title }}" class="open-detail-link">{{ $image->title }}</a>
@@ -62,7 +62,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="{{ route('uploadimage.notulengizi') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('upload.image', ['prog' => 'promkes_lokmun_notulen']) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-body">
                     <div class="form-group">
@@ -74,10 +74,12 @@
                         <input type="text" class="form-control" id="exampleFormControlFile" name="title" placeholder="Enter title here">
                     </div>
                 </div>
+                <input type="hidden" name="type" value="promkes_lokmun_notulen"/>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-primary">Upload</button>
                 </div>
+                
             </form>
         </div>
     </div>
@@ -127,7 +129,7 @@
 
         // Set the image source dynamically
         var image = document.getElementById('modalImage');
-        image.src = "{{ asset('storage/uploads/notulen') }}/" + imageName;
+        image.src = "{{ asset('storage/uploads/lokmun') }}/" + imageName;
 
         // Set the truncated title
         var title = document.getElementById('imageModalLabel');
@@ -135,11 +137,11 @@
 
         // Set the href for the "Open Detail" button
         var openDetailButton = document.getElementById('openDetailButton');
-        openDetailButton.href = "{{ asset('storage/uploads/notulen') }}/" + imageName;
+        openDetailButton.href = "{{ asset('storage/uploads/lokmun') }}/" + imageName;
 
         // Set the href for the "Delete" button
         var deleteButton = document.getElementById('deleteButton');
-        deleteButton.href = "{{ route('deleteimage.notulengizi') }}?name=" + imageName;
+        deleteButton.href = "{{ route('delete.image') }}?name=" + imageName;
 
         // Store the current image name for later use
         currentImageName = imageName;
@@ -178,20 +180,24 @@
                         },
                         success: function(response) {
                             // Handle success here (e.g., remove the image from the gallery)
-                            console.log('hahahaha');
                             // You can also close the modal or update the UI as needed
                             $('#imageModal').modal('hide');
 
                             // Reload the page after deletion
                             location.reload();
+
+                            
                         },
                         error: function(error) {
                             // Handle error here (e.g., display an error message)
                             console.error(error);
                         },
                     });
+                    
 
                 }
+
+                location.reload();
             });
         }
     });

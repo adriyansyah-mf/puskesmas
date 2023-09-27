@@ -116,10 +116,12 @@
 <!-- JavaScript to open image modal and delete image -->
 
 <script>
+    
     $(document).ready(function() {
     var currentImageName = ''; // Store the current image name
 
     $('.open-detail-link').on('click', function() {
+
         var imageName = $(this).data('image-name');
         var imageTitle = $(this).data('image-title');
 
@@ -153,8 +155,10 @@
         e.preventDefault(); // Prevent the default link behavior
 
         // Check if there's a current image name to delete
+        
         if (currentImageName) {
             // Use SweetAlert for confirmation
+            
             Swal.fire({
                 title: 'Apakah anda yakin?',
                 text: 'Data yang terhapus tidak akan bisa kembali!',
@@ -165,6 +169,7 @@
                 confirmButtonText: 'Ya, Hapus!',
                 cancelButtonText: 'Batal'
             }).then((result) => {
+                
                 if (result.isConfirmed) {
                     // Get the CSRF token value from the meta tag
                     var csrfToken = $('meta[name="csrf-token"]').attr('content');
@@ -172,10 +177,11 @@
                     // Send an AJAX request to delete the image
                     $.ajax({
                         type: 'DELETE',
-                        url: "{{ route('delete.image') }}",
+                        url: "{{ route('deleteimage.dokumentasigizi') }}",
                         data: {
                             name: currentImageName,
                             _token: csrfToken, // Include the CSRF token in the request
+
                         },
                         success: function(response) {
                             // Handle success here (e.g., remove the image from the gallery)
@@ -190,9 +196,10 @@
                             // Handle error here (e.g., display an error message)
                             console.error(error);
                         },
+                        
                     });
 
-                    location.reload();
+      
                 }
             });
         }

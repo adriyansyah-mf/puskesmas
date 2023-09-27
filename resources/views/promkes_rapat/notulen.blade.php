@@ -62,7 +62,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="{{ route('uploadimage.notulengizi') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('uploadimage.notulenpromkes') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-body">
                     <div class="form-group">
@@ -139,7 +139,7 @@
 
         // Set the href for the "Delete" button
         var deleteButton = document.getElementById('deleteButton');
-        deleteButton.href = "{{ route('deleteimage.notulengizi') }}?name=" + imageName;
+        deleteButton.href = "{{ route('deleteimage.notulenpromkes') }}?name=" + imageName;
 
         // Store the current image name for later use
         currentImageName = imageName;
@@ -191,6 +191,7 @@
                         },
                     });
 
+                    location.reload();
                 }
             });
         }
