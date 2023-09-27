@@ -56,7 +56,7 @@
 
 
 <body>
-    <div class="scrolling-title">.:: Puskesmas Gubug 2 ::.</div>
+    {{-- <div class="scrolling-title">.:: Puskesmas Gubug 2 ::.</div> --}}
     <div class="page-wrapper">
 
 
