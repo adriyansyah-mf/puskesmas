@@ -202,7 +202,7 @@
                 
                                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                                         {{-- <li><a class="dropdown-item" href="lokmun/gizi_lokmun_notulen/notulen">Notulen</a></li> --}}
-                                                        <li><a class="dropdown-item" href="{{ route('lokmun_route', ['prog' => 'gizi_lokmun_notulen', 'view_name' => 'notulen']) }}">Notulen</a></li>
+                                                        <li><a class="dropdown-item" href="{{ route('lokmun_route', ['prog' => 'gizi_lokmun_notulen', 'view_name' => 'notulen', 'title' => 'Gizi']) }}">Notulen</a></li>
                                                     </ul>
                                                 </li>
                                                 <li class="dropdown dropdown-submenu dropright">
@@ -269,7 +269,7 @@
                 
                                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                                         {{-- <li><a class="dropdown-item" href="lokmun/kesling_lokmun_notulen/kesling">notulen</a></li> --}}
-                                                        <li><a class="dropdown-item" href="{{ route('lokmun_route', ['prog' => 'kesling_lokmun_notulen', 'view_name' => 'kesling']) }}">Notulen</a></li>
+                                                        <li><a class="dropdown-item" href="{{ route('lokmun_route', ['prog' => 'kesling_lokmun_notulen', 'view_name' => 'kesling', 'title' => 'kesling']) }}">Notulen</a></li>
 
                                                     </ul>
                                                 </li>
@@ -335,7 +335,7 @@
                                                         aria-expanded="false">Lokmun Linprok Linsek</a>
                 
                                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                                        <li><a class="dropdown-item" href="{{ route('lokmun_route', ['prog' => 'kia_lokmun_notulen', 'view_name' => 'kia']) }}">Notulen</a></li>
+                                                        <li><a class="dropdown-item" href="{{ route('lokmun_route', ['prog' => 'kia_lokmun_notulen', 'view_name' => 'kia', 'title' => 'KIA']) }}">Notulen</a></li>
 
                                                         {{-- <li><a class="dropdown-item" href="lokmun/kia_lokmun_notulen/kia">Notulen</a></li> --}}
                                                     </ul>
@@ -403,7 +403,7 @@
                 
                                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                                         {{-- <li><a class="dropdown-item" href="lokmun/p2p_lokmun_notulen/p2p">Notulen</a></li> --}}
-                                                        <li><a class="dropdown-item" href="{{ route('lokmun_route', ['prog' => 'p2p_lokmun_notulen', 'view_name' => 'p2p']) }}">Notulen</a></li>
+                                                        <li><a class="dropdown-item" href="{{ route('lokmun_route', ['prog' => 'p2p_lokmun_notulen', 'view_name' => 'p2p', 'title' => 'P2P']) }}">Notulen</a></li>
 
                                                     </ul>
                                                 </li>
@@ -470,7 +470,7 @@
                 
                                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                                         {{-- <li><a class="dropdown-item" href="lokmun/perkesmas_lokmun_notulen/perkesmas">Notulen</a></li> --}}
-                                                        <li><a class="dropdown-item" href="{{ route('lokmun_route', ['prog' => 'perkesmas_lokmun_notulen', 'view_name' => 'perkesmas']) }}">Notulen</a></li>
+                                                        <li><a class="dropdown-item" href="{{ route('lokmun_route', ['prog' => 'perkesmas_lokmun_notulen', 'view_name' => 'perkesmas' , 'title' => 'PERKESMAS']) }}">Notulen</a></li>
 
                                                     </ul>
                                                 </li>
@@ -536,7 +536,7 @@
                                                         aria-expanded="false">Lokmun Linprok Linsek</a>
                 
                                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                                        <li><a class="dropdown-item" href="{{ route('lokmun_route', ['prog' => 'promkes_lokmun_notulen', 'view_name' => 'promkes']) }}">Notulen</a></li>
+                                                        <li><a class="dropdown-item" href="{{ route('lokmun_route', ['prog' => 'promkes_lokmun_notulen', 'view_name' => 'promkes', 'title' => 'PROMKES']) }}">Notulen</a></li>
 
                                                         {{-- <li><a class="dropdown-item" href="lokmun/promkes_lokmun_notulen/promkes">Notulen</a></li> --}}
                                                     </ul>
@@ -620,7 +620,7 @@
                 
                                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                                         {{-- <li><a class="dropdown-item" href="lokmun/kesjiwa_lokmun_notulen/kesjiwa">Notulen</a></li> --}}
-                                                        <li><a class="dropdown-item" href="{{ route('lokmun_route', ['prog' => 'kesjiwa_lokmun_notulen', 'view_name' => 'kesjiwa']) }}">Notulen</a></li>
+                                                        <li><a class="dropdown-item" href="{{ route('lokmun_route', ['prog' => 'kesjiwa_lokmun_notulen', 'view_name' => 'kesjiwa', 'title' => 'kesjiwa']) }}">Notulen</a></li>
 
                                                     </ul>
                                                 </li>
@@ -687,7 +687,7 @@
                 
                                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                                         {{-- <li><a class="dropdown-item" href="lokmun/pkpr_lokmun_notulen/pkpr">Notulen</a></li> --}}
-                                                        <li><a class="dropdown-item" href="{{ route('lokmun_route', ['prog' => 'pkpr_lokmun_notulen', 'view_name' => 'pkpr']) }}">Notulen</a></li>
+                                                        <li><a class="dropdown-item" href="{{ route('lokmun_route', ['prog' => 'pkpr_lokmun_notulen', 'view_name' => 'pkpr', 'title' => 'PKPR']) }}">Notulen</a></li>
 
                                                     </ul>
                                                 </li>

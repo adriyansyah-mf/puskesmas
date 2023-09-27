@@ -212,9 +212,10 @@
 
                 }
 
-                location.reload();
+               
             });
         }
+        location.reload();
     });
 });
 

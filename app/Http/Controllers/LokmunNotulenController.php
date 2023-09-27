@@ -11,7 +11,7 @@ use PhpOffice\PhpWord\IOFactory;
 
 class LokmunNotulenController extends Controller
 {
-    public function index($prog, $view_name){
+    public function index($prog, $view_name, $title){
 
         // $images = DB::table('images')->where('type', 'lokmun')->get();
         $images = Image::where('type', $prog)->orderBy('created_at', 'desc')->paginate(9);
@@ -24,7 +24,7 @@ class LokmunNotulenController extends Controller
         $viewName = 'lokmun.'.$view_name;
 
         return view($viewName,[
-            "title" => "$prog",
+            "title" => "$title",
             "path" => "lokmin_linprog_linsek",
             "images" => $images
         ]);

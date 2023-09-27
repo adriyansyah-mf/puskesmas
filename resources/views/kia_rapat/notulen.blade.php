@@ -206,10 +206,11 @@
                         },
                     });
 
-                    location.reload();
+                   
                 }
             });
         }
+        location.reload();
     });
 });
 

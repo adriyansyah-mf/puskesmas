@@ -227,9 +227,10 @@
 
                 }
 
-                location.reload();
+              
             });
         }
+        location.reload();
     });
 });
 

@@ -103,7 +103,7 @@ Route::delete('report/delete', [LaporanKinerjaController::class, 'delete'])->nam
 
 // lokmun
 
-Route::get('lokmun/{prog}/{view_name}', [LokmunNotulenController::class, 'index'])->middleware('auth')->where('type', 'kesling_lokmun_notulen')->name('lokmun_route');
+Route::get('lokmun/{prog}/{view_name}/{title}', [LokmunNotulenController::class, 'index'])->middleware('auth')->where('type', 'kesling_lokmun_notulen')->name('lokmun_route');
 
 Route::post('/image-upload/{prog}', [LokmunNotulenController::class, 'uploadImage'])->name('upload.image')->middleware('auth');
 

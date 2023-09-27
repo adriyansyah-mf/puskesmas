@@ -192,9 +192,10 @@
                         },
                     });
 
-                    location.reload();
+                    
                 }
             });
+            location.reload();
         }
     });
 });
