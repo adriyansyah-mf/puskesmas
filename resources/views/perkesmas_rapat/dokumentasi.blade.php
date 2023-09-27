@@ -203,11 +203,14 @@
                         },
                         error: function(error) {
                             // Handle error here (e.g., display an error message)
-                            console.error(error);
+                            $('#imageModal').modal('hide');
+
+                            // Reload the page after deletion
+                            location.reload();
                         },
                     });
 
-                    location.reload();
+                   
                 }
             });
         }

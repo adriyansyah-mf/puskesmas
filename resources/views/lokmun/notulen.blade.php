@@ -170,6 +170,7 @@
 
         // Check if there's a current image name to delete
         if (currentImageName) {
+            
             // Use SweetAlert for confirmation
             Swal.fire({
                 title: 'Apakah anda yakin?',
@@ -180,8 +181,11 @@
                 cancelButtonColor: '#d33',
                 confirmButtonText: 'Ya, Hapus!',
                 cancelButtonText: 'Batal'
+                
             }).then((result) => {
+                
                 if (result.isConfirmed) {
+                    
                     // Get the CSRF token value from the meta tag
                     var csrfToken = $('meta[name="csrf-token"]').attr('content');
 
@@ -203,15 +207,18 @@
                         },
                         error: function(error) {
                             // Handle error here (e.g., display an error message)
-                            console.error(error);
+                            $('#imageModal').modal('hide');
+
+                            // Reload the page after deletion
+                            location.reload();
                         },
+                        
                     });
 
-             
+         
                 }
             });
         }
-        location.reload();
     });
 });
 

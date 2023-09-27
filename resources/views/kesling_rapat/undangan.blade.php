@@ -14,7 +14,6 @@
 
 
 <meta name="csrf-token" content="{{ csrf_token() }}">
-
  <!--Page Title-->
  <section class="page-title text-center" style="background-image:url('{{ asset('images/background/3.jpg') }}')">
     <div class="container">
@@ -30,6 +29,7 @@
     </div>
 </section>
 <!--End Page Title-->
+
 
 <!-- Image Gallery -->
 <div class="container my-5">
@@ -77,7 +77,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="{{ route('uploadimage.undanganpkpr') }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('uploadimage.undangankesling') }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-body">
                     <div class="form-group">
@@ -212,7 +212,6 @@
             });
         }
 
-     
     });
 });
 
