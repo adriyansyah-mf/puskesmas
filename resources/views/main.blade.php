@@ -2,17 +2,32 @@
 <html lang="zxx">
 
 <head>
+    <style>
+        .scrolling-title {
+            white-space: nowrap;
+            overflow: hidden;
+            width: 100%;
+            animation: marquee 10s linear infinite;
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(100%); }
+            100% { transform: translateX(-100%); }
+        }
+    </style>
 
     <!-- ** Basic Page Needs ** -->
     <meta charset="utf-8">
-    <title>Puskesmas Gubug2</title>
+    <title class="scrolling-title">.:: Puskesmas Gubug 2 ::. </title>
+    {{-- add favicon --}}
 
     <!-- ** Mobile Specific Metas ** -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="description" content="Medical HTML Template">
+    <meta name="description" content="Sistem Informasi Puskesmas Gubug 2">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
     <meta name="author" content="Themefisher">
-    <meta name="generator" content="Themefisher Medical HTML Template v1.0">
+    <meta name="generator" content="Sistem Informasi Puskesmas Gubug 2">
+
 
     <!-- ** Plugins Needed for the Project ** -->
     <!-- bootstrap -->
@@ -41,6 +56,7 @@
 
 
 <body>
+    <div class="scrolling-title">.:: Puskesmas Gubug 2 ::.</div>
     <div class="page-wrapper">
 
 
@@ -757,8 +773,7 @@
                                             aria-label="twitter"><i class="fab fa-twitter"></i></a></li>
                                     <li class="list-inline-item"><a href="https://instagram.com/themefisher"
                                             aria-label="instagram"><i class="fab fa-instagram"></i></a></li>
-                                    <li class="list-inline-item"><a href="https://github.com/themefisher"
-                                            aria-label="github"><i class="fab fa-github"></i></a></li>
+                                  
                                 </ul>
                             </div>
                         </div>
