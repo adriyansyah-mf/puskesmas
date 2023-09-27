@@ -122,9 +122,9 @@
                         <li class="nav-item @@home">
                             <a class="nav-link" href="/">Home</a>
                         </li>
-                        <li class="nav-item @@about">
+                        {{-- <li class="nav-item @@about">
                             <a class="nav-link" href="/about">About</a>
-                        </li>
+                        </li> --}}
 
                         {{-- drop down 1 --}}
 
