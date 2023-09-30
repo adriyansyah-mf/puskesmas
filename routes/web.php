@@ -12,6 +12,7 @@ use App\Http\Controllers\IndicatorController;
 use App\Http\Controllers\LaporanKinerjaController;
 use App\Http\Controllers\JadwalController;
 use App\Http\Controllers\LokmunNotulenController;
+use App\Http\Controllers\InovasiController;
 use App\Http\Controllers\GiziRapatController;
 use App\Http\Controllers\keslingRapatController;
 use App\Http\Controllers\KiaRapatController;
@@ -110,6 +111,9 @@ Route::post('/image-upload/{prog}', [LokmunNotulenController::class, 'uploadImag
 Route::delete('lokmun/delete', [LokmunNotulenController::class, 'deleteImage'])->name('delete.image')->middleware('auth');
 
 
+// Inovaso
+
+Route::get('lokmun/{prog}/{view_name}/{title}/inovasi', [InovasiController::class, 'index'])->middleware('auth')->where('type', 'inovasi')->name('inovasi');
 
 
 // gizi rapat

@@ -715,6 +715,9 @@
                         <li class="nav-item @@appointment">
                             <a class="nav-link" href="/spm/spm">SPM</a>
                         </li>
+                        <li class="nav-item @@">
+                            <li><a class="nav-link" href="{{ route('inovasi', ['prog' => 'inovasi', 'view_name' => 'index', 'title' => 'inovasi']) }}">Inovasi</a></li>
+                        </li>
                     </ul>
 
                     {{-- profile menu --}}

@@ -42,7 +42,7 @@
                 </a>
             </div>
             <div class="row">
-                @foreach ($images->where('type', 'kesjiwa_lokmun_notulen') as $image)
+                @foreach ($images->where('type', 'inovasi') as $image)
                 <div class="col-md-4 mb-4">
                     <div class="card">
                         <img src="{{ asset('storage/uploads/lokmun/' . $image->name) }}" class="card-img-top" alt="{{ $image->title }}">
@@ -77,7 +77,7 @@
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
-            <form action="{{ route('upload.image', ['prog' => 'kesjiwa_lokmun_notulen']) }}" method="POST" enctype="multipart/form-data">
+            <form action="{{ route('upload.image', ['prog' => 'inovasi']) }}" method="POST" enctype="multipart/form-data">
                 @csrf
                 <div class="modal-body">
                     <div class="form-group">
@@ -89,7 +89,7 @@
                         <input type="text" class="form-control" id="exampleFormControlFile" name="title" placeholder="Enter title here">
                     </div>
                 </div>
-                <input type="hidden" name="type" value="kesjiwa_lokmun_notulen"/>
+                <input type="hidden" name="type" value="inovasi"/>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                     <button type="submit" class="btn btn-primary">Upload</button>
@@ -208,9 +208,7 @@
                             // Reload the page after deletion
                             location.reload();
                         },
-                    });
-
-                    
+                    });                    
                 }
             });
         }

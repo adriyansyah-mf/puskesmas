@@ -218,7 +218,6 @@
                
             });
         }
-        location.reload();
     });
 });
 
